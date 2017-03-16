@@ -31,12 +31,11 @@ enum SharedSelectionOutput : SelectionOutput {
     case url(URL?)
     case preview(URL?)
     case playVideo(URL?)
-    case confirm(title:String,message:String,confirmTitle:String,action:((Void)->()))
-//    case presentImage(photos:[IDMPhotoProtocol], fromView:UIImageView,fromIndex:Int)
-    //    case gallery(photos:[IDMPhotoProtocol],view:UIView, index:UInt, image:UIImage?)
+    case confirm(title: String, message: String, confirmTitle: String, action: ((Void)->()))
 }
 
 enum TabBarItemType {
+    
     case masiWorld
     case wines
     case cantina
@@ -52,9 +51,11 @@ enum TabBarItemType {
         case .resources: return "Resources".localized()
         }
     }
+    
     var icon:UIImage? {
         return UIImage(named:self.iconName)
     }
+    
     private var iconName:String {
         switch self {
         case .masiWorld : return  "icon_masiWorld"
@@ -64,54 +65,46 @@ enum TabBarItemType {
         case .resources: return "icon_resources"
         }
     }
+    
 }
 
-class NavigationController : UINavigationController, UINavigationBarDelegate {
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        //        let heightBar = UIApplication.shared.statusBarFrame.height + self.navigationBar.frame.size.height
-        //        self.navigationBar.setBackgroundImage(UIImage.rectangle(ofSize:  CGSize(width:self.navigationBar.frame.size.width, height:heightBar) , color: UIColor.silver), for: .default)
-//        self.navigationBar.setBackgroundImage(UIImage.navbar(), for: .default)
-//        self.navigationBar.tintColor = UIColor.white
-//        self.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white, NSFontAttributeName : UIFont.helveticaRegular(ofSize: 0) ]
-    }
+class NavigationController: UINavigationController, UINavigationBarDelegate {
     
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
         switch UIDevice.current.userInterfaceIdiom {
-        case .pad : return .landscape
-        default : return .portrait
+        case .pad:
+            return .landscape
+        default:
+            return .portrait
         }
     }
-    override var preferredStatusBarStyle: UIStatusBarStyle{
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
-        
     }
-    override var shouldAutorotate: Bool{
-        return false;
+    
+    override var shouldAutorotate: Bool {
+        return false
     }
+    
 }
 
 extension UIView {
     func findFirstResponder() -> UIView? {
-        if (self.isFirstResponder) {
-            return self
-        }
-        if (self.subviews.count == 0) {
-            return nil
-        }
-        return self.subviews.map {$0.findFirstResponder() ?? self}.filter {$0 != self}.first
+        if self.isFirstResponder { return self }
+        if self.subviews.count == 0 { return nil }
+        return self.subviews.map { $0.findFirstResponder() ?? self }.filter { $0 != self }.first
     }
 }
 
 protocol KeyboardResizable  {
-    var bottomConstraint:NSLayoutConstraint! {get set}
+    var bottomConstraint:NSLayoutConstraint! { get set }
     var scrollView:UIScrollView {get}
-    var keyboardResize: Observable<CGFloat> {get}
+    var keyboardResize: Observable<CGFloat> { get }
 }
 
-extension KeyboardResizable where Self : UIViewController {
-    //    var keyboardResize: Observable<CGFloat> {return .just(0)}
+extension KeyboardResizable where Self: UIViewController {
+    
     var keyboardResize: Observable<CGFloat>  {
         self.scrollView.keyboardDismissMode = .onDrag
         let original:CGFloat = self.bottomConstraint.constant
@@ -153,9 +146,11 @@ extension KeyboardResizable where Self : UIViewController {
                 })
         
     }
+    
     func finalConstraintValueValueForKeyboardOpen(frame:CGRect) -> CGFloat {
         return frame.size.height
     }
+    
 }
 protocol Collectionable {
     weak var collectionView:UICollectionView! {get}
@@ -243,8 +238,7 @@ extension UIViewController {
     
     
     func showLoader() {
-        
-        if (self.loaderCount == 0) {
+        if self.loaderCount == 0 {
             DispatchQueue.main.async {[unowned self] in
                 let hud = MBProgressHUD.showAdded(to: self.loaderContentView(), animated: true)
                 let spin = self.loaderView()
@@ -254,29 +248,25 @@ extension UIViewController {
                 hud.tintColor = .red
                 hud.contentColor = .red
             }
-            
         }
         self.loaderCount += 1
-        
     }
+    
     func hideLoader() {
-        
-        
         DispatchQueue.main.async {[weak self]  in
-            if (self == nil) {
-                return
-            }
+            if self == nil { return }
+            
             self!.loaderCount = max(0, (self!.loaderCount ) - 1)
-            if (self!.loaderCount == 0) {
+            
+            if self!.loaderCount == 0 {
                 MBProgressHUD.hide(for: self!.loaderContentView(), animated: true)
             }
         }
-        
     }
-    func sharedSelection(_ output:SelectionOutput) {
-        guard let shared = output as? SharedSelectionOutput else {
-            return
-        }
+    
+    func sharedSelection(_ output: SelectionOutput) {
+        guard let shared = output as? SharedSelectionOutput else { return }
+        
         switch shared {
         case .restart:
             Router.restart()
@@ -288,33 +278,17 @@ extension UIViewController {
             Router.exit(self)
         case .dismiss:
             Router.dismiss(self)
-        case .confirm(let title, let message, let confirmTitle, let action) :
+        case .confirm(let title, let message, let confirmTitle, let action):
             Router.confirm(title: title, message: message, confirmationTitle: confirmTitle, from: self, action: action).execute()
-            
         case .playVideo(let url):
-            //            Router.playVideo(url, from: self).execute()
             break
-        default: break
-//        case .presentImage(let photos, let fromView, let fromIndex):
-//            if let browser = IDMPhotoBrowser(photos: photos, animatedFrom: fromView) {
-//                
-//                browser.scaleImage = fromView.image
-//                browser.displayActionButton = false;
-//                browser.displayArrowButton = false;
-//                browser.displayCounterLabel = false;
-//                browser.displayDoneButton = true;
-//                browser.usePopAnimation = true;
-//                browser.setInitialPageIndex(UInt(fromIndex))
-//                self.present(browser, animated: true, completion: nil)
-//            }
+        default:
+            break
         }
-        
     }
+    
     func showError(_ error:ActionError) {
-        //        Router.error(error.unwrap(), from: self).execute()
+        // Router.error(error.unwrap(), from: self).execute()
     }
     
 }
-
-
-

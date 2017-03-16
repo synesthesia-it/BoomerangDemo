@@ -15,12 +15,12 @@ final class ShowItemViewModel: ItemViewModelType {
     var model: ItemViewModelType.Model
     var itemIdentifier: ListIdentifier = Cell.showItem
     var itemTitle: String?
-    var image: ImageType?
+    var imageUrl: String?
     
     init(model: TVMaze.Show) {
         self.model = model
         self.itemTitle = model.name
-        self.image = UIImage(named: "")
+        self.imageUrl = model.image?.medium
     }
     
 }

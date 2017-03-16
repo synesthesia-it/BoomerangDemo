@@ -12,60 +12,45 @@ import RxSwift
 import Gloss
 import AlamofireImage
 
-struct Image: Decodable, ImageType {
+struct SYNImageDownloader {
     
-    static let downloader = {
+    private static let downloader = {
+        // AlamofireImage's downloader
         return ImageDownloader()
     }()
     
-    static func  download(url:String?) -> Observable<UIImage?> {
-        guard let url = url else {
+    static func download(from urlString: String?) -> Observable<UIImage?> {
+        guard let urlString = urlString, let url = URL(string: urlString) else {
             return .just(nil)
         }
-        return Observable.create({ observer in
-            if let url = URL(string: url) {
-                let urlRequest = URLRequest(url: url)
-                let receipt = downloader.download(urlRequest, completion: { response in
-                    if let error =  response.result.error{
-                        observer.onError(error)
-                    }
-                    if let image = response.result.value {
-                        observer.onNext(image)
-                        observer.onCompleted()
-                    }
-                    
-                })
-                return Disposables.create {
-                    if receipt != nil {
-                        downloader.cancelRequest(with: receipt!)
-                    }
+        return SYNImageDownloader.download(url)
+    }
+    
+    static func  download(_ url: URL) -> Observable<UIImage?> {
+        return Observable.create { observer in
+            let urlRequest = URLRequest(url: url)
+            let receipt = downloader.download(urlRequest) { response in
+                if let error =  response.result.error {
+                    observer.onError(error)
+                }
+                if let image = response.result.value {
+                    observer.onNext(image)
+                    observer.onCompleted()
                 }
             }
-            return Disposables.create()
-        })
-    }
-    let medium: String?
-    let original: String?
-    
-    func get() -> Observable<UIImage?> {
-        return Image.download(url: medium)
-    }
-    
-    init(json: JSON) {
-        self.medium = "medium" <~~ json
-        self.original = "original" <~~ json
+            return Disposables.create {
+                if receipt != nil {
+                    downloader.cancelRequest(with: receipt!)
+                }
+            }
+        }
     }
     
 }
 
-protocol ImageType {
-    func get() -> Observable<UIImage?>
-}
-
-extension UIImage: ImageType {
+extension UIImageView {
     
-    func get() -> Observable<UIImage?> {
-        return .just(self)
+    func download(from urlString: String?) {
     }
     
 }

@@ -15,7 +15,7 @@ import RxCocoa
 class ShowItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
     
     @IBOutlet weak var lbl_title: UILabel!
-    @IBOutlet weak var image: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
     
     var viewModel: ItemViewModelType?
     
@@ -28,6 +28,6 @@ class ShowItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
         guard let viewModel = viewModel as? ShowItemViewModel else { return }
         self.viewModel = viewModel
         self.lbl_title.text = viewModel.itemTitle
-        viewModel.image?.get().bindTo(image.rx.image).addDisposableTo(self.disposeBag)
+        SYNImageDownloader.download(from: viewModel.imageUrl).bindTo(imageView.rx.image).addDisposableTo(disposeBag)
     }
 }

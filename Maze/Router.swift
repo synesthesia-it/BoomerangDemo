@@ -13,14 +13,13 @@ import SafariServices
 import MediaPlayer
 import AVKit
 import RxSwift
+
 @available(iOS 9.0, *)
 extension SFSafariViewController {
     class func canOpenURL(URL: URL) -> Bool {
         return URL.host != nil && (URL.scheme == "http" || URL.scheme == "https")
     }
 }
-
-
 
 internal extension UIViewController {
     func withNavigation() -> NavigationController {
@@ -61,20 +60,14 @@ struct Router : RouterType {
         return UIViewControllerRouterAction.modal(source: source, destination: alert, completion: nil)
     }
     
-    public static func actions<Source:UIViewController>(fromSource source:Source, item:UIBarButtonItem, actions:[UIAlertAction]) -> RouterAction {
+    public static func actions<Source: UIViewController>(fromSource source: Source, item: UIBarButtonItem, actions: [UIAlertAction]) -> RouterAction {
         let alert = UIAlertController(title:nil, message: nil, preferredStyle: .actionSheet)
-        
-        _ = actions.reduce(alert) { (accumulator, action)  in
-            accumulator.addAction(action)
-            
-            return accumulator
-        }
+        actions.forEach { alert.addAction($0) }
         alert.modalPresentationStyle = .popover
         let popover = alert.popoverPresentationController!
         popover.permittedArrowDirections = .up
         popover.barButtonItem = item
         return UIViewControllerRouterAction.modal(source: source, destination: alert, completion: nil)
-        
     }
 
     

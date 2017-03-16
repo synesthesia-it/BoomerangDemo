@@ -12,10 +12,6 @@ import RxSwift
 import Action
 import Boomerang
 
+typealias Selection = Action<SelectionInput, SelectionOutput>
 
-
-typealias Selection = Action<SelectionInput,SelectionOutput>
-
-struct ViewModelFactory {
-    
-}
+struct ViewModelFactory {}

@@ -16,7 +16,7 @@ extension TVMaze {
         
         let id: Int
         let name: String
-        let image: Image?
+        let image: TVMaze.ShowImage?
         
         init?(json: JSON) {
             guard let name: String = "name" <~~ json,
