@@ -17,7 +17,7 @@ final class ShowItemViewModel: ItemViewModelType {
     var itemTitle: String?
     var image: ImageType?
     
-    init(model: TvMaze.Show) {
+    init(model: TVMaze.Show) {
         self.model = model
         self.itemTitle = model.name
         self.image = UIImage(named: "")

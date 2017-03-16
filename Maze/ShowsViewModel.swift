@@ -23,7 +23,7 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable {
     var dataHolder: ListDataHolderType = ListDataHolder()
     
     func itemViewModel(fromModel model: ModelType) -> ItemViewModelType? {
-        guard let model = model as? TvMaze.Show else {
+        guard let model = model as? TVMaze.Show else {
             return nil
         }
         return ShowItemViewModel(model:model)
@@ -34,7 +34,7 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable {
     lazy var selection:Action<ShowSelectionInput,ShowSelectionOutput> = Action { input in
         switch input {
         case .item(let indexPath):
-            guard let model = (self.model(atIndex:indexPath) as? TvMaze.Show) else {
+            guard let model = (self.model(atIndex:indexPath) as? TVMaze.Show) else {
                 return .empty()
             }
             return .empty()
@@ -45,7 +45,7 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable {
     
     
     init() {
-        let obs = TvMaze.getShows(withQuery: "Alias").structured()
+        let obs = TVMaze.getShows(withQuery: "Alias").structured()
         self.dataHolder = ListDataHolder(data:obs)
     }
 }
