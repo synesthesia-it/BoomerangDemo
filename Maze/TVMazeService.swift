@@ -19,23 +19,27 @@ extension TVMaze {
     
     enum Service {
         case searchShows(query: String)
+        case castOfShow(id: Int)
     }
     
 }
 
 extension TVMaze.Service: TargetType {
+    
     var baseURL: URL { return URL(string: "https://api.tvmaze.com")! }
     
     var path: String {
         switch self {
         case .searchShows:
             return "/search/shows"
+        case .castOfShow(let id):
+            return "/shows/\(id)/cast"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .searchShows:
+        case .searchShows, .castOfShow:
             return .get
         }
     }
@@ -44,12 +48,14 @@ extension TVMaze.Service: TargetType {
         switch self {
         case .searchShows(let query):
             return ["q": query]
+        default:
+            return nil
         }
     }
     
     var parameterEncoding: ParameterEncoding {
         switch self {
-        case .searchShows:
+        default:
             return URLEncoding.default // Send parameters in URL
         }
     }
@@ -60,8 +66,9 @@ extension TVMaze.Service: TargetType {
     
     var task: Task {
         switch self {
-        case .searchShows:
+        default:
             return .request
         }
     }
+    
 }

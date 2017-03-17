@@ -18,8 +18,7 @@ extension TVMaze {
         let id: Int
         let name: String
         let status: String?
-        var thumbnail: TVMaze.ShowImage?
-        var original: TVMaze.ShowImage?
+        var thumbnail: TVMaze.Image?
         var network: Network?
         var genres: [Genre]?
         
@@ -34,7 +33,7 @@ extension TVMaze {
             self.network = "network" <~~ json
             self.genres = "genres" <~~ json
             if let thumbPath: String = "image.medium" <~~ json {
-                self.thumbnail = TVMaze.ShowImage(path: thumbPath)
+                self.thumbnail = TVMaze.Image(path: thumbPath)
             }
         }
         

@@ -47,11 +47,11 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable {
         let obs = TVMaze.getShows(withQuery: "Alias")
             .map{array -> [ModelType] in
                 var a: [ModelType] = array
-                a.append(ShowItemViewModel(model:"TEST"))
+//                a.append(ShowItemViewModel(model:"TEST"))
                 return a
             }
             .structured()
-        self.dataHolder = ListDataHolder(data:obs)
+        self.dataHolder = ListDataHolder(data: obs)
     }
     
 }

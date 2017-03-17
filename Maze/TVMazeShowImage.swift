@@ -12,7 +12,7 @@ import RxSwift
 
 extension TVMaze {
 
-    struct ShowImage:  ObservableImageType {
+    struct Image:  ObservableImageType {
         
         let path: String
 

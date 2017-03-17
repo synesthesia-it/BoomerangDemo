@@ -22,10 +22,12 @@ extension ListViewModelType {
 
 enum Cell: String, ListIdentifier {
     case showItem = "ShowItemCollectionViewCell"
+    case actorItem = "ActorItemCollectionViewCell"
     case genre = "GenreItemCollectionViewCell"
     static func all() -> [Cell] {
         return [
             .showItem,
+            .actorItem,
             .genre
         ]
     }
