@@ -20,38 +20,50 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="xaG-5c-Xc6">
-                        <rect key="frame" x="0.0" y="0.0" width="136.5" height="218"/>
+                        <rect key="frame" x="0.0" y="0.0" width="137" height="218"/>
                         <constraints>
                             <constraint firstAttribute="width" secondItem="xaG-5c-Xc6" secondAttribute="height" multiplier="92:147" id="ART-Mp-apO"/>
                             <constraint firstAttribute="width" constant="50" id="o9q-wm-p7z"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mR-QP-hrh">
-                        <rect key="frame" x="156" y="99" width="252" height="21.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQa-hk-HDL">
                         <rect key="frame" x="428" y="94" width="30" height="30"/>
                         <state key="normal" title="&gt;"/>
                     </button>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="d8P-4F-plM">
+                        <rect key="frame" x="152" y="87" width="276" height="45"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mR-QP-hrh">
+                                <rect key="frame" x="0.0" y="0.0" width="44" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8kp-Sc-c54">
+                                <rect key="frame" x="0.0" y="25.5" width="39.5" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="xaG-5c-Xc6" secondAttribute="bottom" id="0eZ-w5-Y07"/>
+                <constraint firstAttribute="trailing" secondItem="d8P-4F-plM" secondAttribute="trailing" constant="30" id="4MB-NM-VPp"/>
+                <constraint firstItem="d8P-4F-plM" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="Jq1-Hp-fe4"/>
                 <constraint firstAttribute="trailing" secondItem="yQa-hk-HDL" secondAttribute="trailing" id="N6V-04-5EH"/>
-                <constraint firstItem="9mR-QP-hrh" firstAttribute="leading" secondItem="xaG-5c-Xc6" secondAttribute="trailing" constant="19.5" id="NIC-lf-08A"/>
-                <constraint firstItem="9mR-QP-hrh" firstAttribute="centerY" secondItem="xaG-5c-Xc6" secondAttribute="centerY" id="ZQm-EO-66F"/>
                 <constraint firstItem="xaG-5c-Xc6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gfD-QN-txd"/>
                 <constraint firstItem="xaG-5c-Xc6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kqw-rl-v0K"/>
-                <constraint firstAttribute="trailing" secondItem="9mR-QP-hrh" secondAttribute="trailing" constant="50" id="qR2-Nc-ah7"/>
                 <constraint firstItem="yQa-hk-HDL" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="vLc-Xw-91A"/>
+                <constraint firstItem="d8P-4F-plM" firstAttribute="leading" secondItem="xaG-5c-Xc6" secondAttribute="trailing" constant="15" id="yFS-yy-S6b"/>
             </constraints>
             <size key="customSize" width="458" height="218"/>
             <connections>
-                <outlet property="imageView" destination="xaG-5c-Xc6" id="w2L-br-qyg"/>
-                <outlet property="lbl_title" destination="9mR-QP-hrh" id="h7b-LB-DSr"/>
+                <outlet property="subtitle" destination="8kp-Sc-c54" id="7ra-Z8-x3p"/>
+                <outlet property="thumbnail" destination="xaG-5c-Xc6" id="oOt-SY-HTh"/>
+                <outlet property="title" destination="9mR-QP-hrh" id="f12-Hu-jkd"/>
             </connections>
             <point key="canvasLocation" x="218" y="63"/>
         </collectionViewCell>

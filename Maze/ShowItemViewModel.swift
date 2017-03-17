@@ -18,14 +18,21 @@ final class ShowItemViewModel: ItemViewModelType {
     var itemTitle: String?
     var imageUrl: String?
     var image:ObservableImage?
+    var networkName: String?
+    var status: String?
+    
+    var description: String?
     
     init(model: TVMaze.Show) {
         self.model = model
         self.itemTitle = model.name
         self.image = model.thumbnail?.get().shareReplay(1)
+        self.networkName = model.network?.name
+        self.status = model.status
+        self.description = [self.networkName, self.status].flatMap({ $0 }).joined(separator: " - ")
     }
     
-    init(model:String) {
+    init(model: String) {
         self.model = model
         self.itemTitle = model
     }
