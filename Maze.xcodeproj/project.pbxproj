@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		130059DD1E7BE34A0055793B /* GenreItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130059D81E7BE34A0055793B /* GenreItemCollectionViewCell.swift */; };
+		130059DE1E7BE34A0055793B /* GenreItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130059D91E7BE34A0055793B /* GenreItemCollectionViewCell.xib */; };
+		130059DF1E7BE34A0055793B /* GenreItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130059DA1E7BE34A0055793B /* GenreItemViewModel.swift */; };
+		130059E01E7BE34A0055793B /* GenresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130059DB1E7BE34A0055793B /* GenresViewController.swift */; };
+		130059E11E7BE34A0055793B /* GenresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130059DC1E7BE34A0055793B /* GenresViewModel.swift */; };
 		133E18CE1E79811700FE0EEE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E18CD1E79811700FE0EEE /* AppDelegate.swift */; };
 		133E18D61E79811700FE0EEE /* ViewModelFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E18D51E79811700FE0EEE /* ViewModelFactory.swift */; };
 		133E18D81E79811700FE0EEE /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E18D71E79811700FE0EEE /* ViewFactory.swift */; };
@@ -36,6 +41,11 @@
 
 /* Begin PBXFileReference section */
 		05C8E661A3FEB29D98FA867D /* Pods-Maze.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maze.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Maze/Pods-Maze.debug.xcconfig"; sourceTree = "<group>"; };
+		130059D81E7BE34A0055793B /* GenreItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		130059D91E7BE34A0055793B /* GenreItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GenreItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		130059DA1E7BE34A0055793B /* GenreItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenreItemViewModel.swift; sourceTree = "<group>"; };
+		130059DB1E7BE34A0055793B /* GenresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenresViewController.swift; sourceTree = "<group>"; };
+		130059DC1E7BE34A0055793B /* GenresViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenresViewModel.swift; sourceTree = "<group>"; };
 		133E18CA1E79811700FE0EEE /* Maze.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Maze.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		133E18CD1E79811700FE0EEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		133E18D51E79811700FE0EEE /* ViewModelFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelFactory.swift; sourceTree = "<group>"; };
@@ -78,6 +88,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		130059D71E7BE2C30055793B /* ShowList */ = {
+			isa = PBXGroup;
+			children = (
+				133E19031E7989BC00FE0EEE /* ShowItemCollectionViewCell.swift */,
+				133E19041E7989BC00FE0EEE /* ShowItemCollectionViewCell.xib */,
+				133E19051E7989BC00FE0EEE /* ShowItemViewModel.swift */,
+				133E19061E7989BC00FE0EEE /* ShowsViewController.swift */,
+				133E19071E7989BC00FE0EEE /* ShowsViewModel.swift */,
+			);
+			name = ShowList;
+			sourceTree = "<group>";
+		};
+		130059E21E7BE34F0055793B /* Genre */ = {
+			isa = PBXGroup;
+			children = (
+				130059D81E7BE34A0055793B /* GenreItemCollectionViewCell.swift */,
+				130059D91E7BE34A0055793B /* GenreItemCollectionViewCell.xib */,
+				130059DA1E7BE34A0055793B /* GenreItemViewModel.swift */,
+				130059DB1E7BE34A0055793B /* GenresViewController.swift */,
+				130059DC1E7BE34A0055793B /* GenresViewModel.swift */,
+			);
+			name = Genre;
+			sourceTree = "<group>";
+		};
 		133E18C11E79811700FE0EEE = {
 			isa = PBXGroup;
 			children = (
@@ -155,11 +189,8 @@
 			isa = PBXGroup;
 			children = (
 				133E18EB1E79811700FE0EEE /* ViewControllerCommons.swift */,
-				133E19031E7989BC00FE0EEE /* ShowItemCollectionViewCell.swift */,
-				133E19041E7989BC00FE0EEE /* ShowItemCollectionViewCell.xib */,
-				133E19051E7989BC00FE0EEE /* ShowItemViewModel.swift */,
-				133E19061E7989BC00FE0EEE /* ShowsViewController.swift */,
-				133E19071E7989BC00FE0EEE /* ShowsViewModel.swift */,
+				130059D71E7BE2C30055793B /* ShowList */,
+				130059E21E7BE34F0055793B /* Genre */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -264,6 +295,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				130059DE1E7BE34A0055793B /* GenreItemCollectionViewCell.xib in Resources */,
 				133E18EF1E79811700FE0EEE /* LaunchScreen.storyboard in Resources */,
 				133E18E91E79811700FE0EEE /* Assets.xcassets in Resources */,
 				133E19091E7989BC00FE0EEE /* ShowItemCollectionViewCell.xib in Resources */,
@@ -329,6 +361,7 @@
 				133E19081E7989BC00FE0EEE /* ShowItemCollectionViewCell.swift in Sources */,
 				13D6D8EB1E7A916700B092B2 /* TVMazeShowImage.swift in Sources */,
 				133E18D61E79811700FE0EEE /* ViewModelFactory.swift in Sources */,
+				130059E01E7BE34A0055793B /* GenresViewController.swift in Sources */,
 				133E190A1E7989BC00FE0EEE /* ShowItemViewModel.swift in Sources */,
 				133E18EC1E79811700FE0EEE /* ViewControllerCommons.swift in Sources */,
 				133E18E21E79811700FE0EEE /* Operators.swift in Sources */,
@@ -341,11 +374,14 @@
 				13D6D8ED1E7ACA7200B092B2 /* LocationManager.swift in Sources */,
 				13D6D8E41E7A789E00B092B2 /* ImageDownloader.swift in Sources */,
 				133E18DB1E79811700FE0EEE /* Router.swift in Sources */,
+				130059E11E7BE34A0055793B /* GenresViewModel.swift in Sources */,
+				130059DD1E7BE34A0055793B /* GenreItemCollectionViewCell.swift in Sources */,
 				133E190C1E7989BC00FE0EEE /* ShowsViewModel.swift in Sources */,
 				133E18D81E79811700FE0EEE /* ViewFactory.swift in Sources */,
 				133E18DD1E79811700FE0EEE /* Router+Preview.swift in Sources */,
 				133E18F71E79822600FE0EEE /* TVMaze.swift in Sources */,
 				133E18E41E79811700FE0EEE /* SeparatorLayout.swift in Sources */,
+				130059DF1E7BE34A0055793B /* GenreItemViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -25,4 +25,9 @@ final class ShowItemViewModel: ItemViewModelType {
         self.image = model.thumbnail?.get().shareReplay(1)
     }
     
+    init(model:String) {
+        self.model = model
+        self.itemTitle = model
+    }
+    
 }

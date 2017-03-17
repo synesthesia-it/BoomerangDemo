@@ -9,7 +9,7 @@
 import Foundation
 import Boomerang
 import Gloss
-
+typealias Genre = String
 extension TVMaze {
     
     struct Show: Decodable, ModelType {
@@ -18,13 +18,14 @@ extension TVMaze {
         let name: String
         var thumbnail: TVMaze.ShowImage?
         var original: TVMaze.ShowImage?
-        
+        var genres:[Genre]?
         init?(json: JSON) {
             guard let name: String = "name" <~~ json,
                 let id: Int = "id" <~~ json
                 else { return nil }
             
             self.id = id
+            self.genres = "genres" <~~ json
             self.name = name
             if let thumbPath:String = "image.medium" <~~ json {
                 self.thumbnail = TVMaze.ShowImage(path: thumbPath)

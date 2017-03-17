@@ -71,6 +71,10 @@ struct Router : RouterType {
     
     public static func from<Source> (_ source:Source, viewModel:ViewModelType) -> RouterAction where Source: UIViewController {
         switch viewModel {
+        case is GenresViewModel :
+            let destination:GenresViewController = Storyboard.main.scene(.genres)
+            destination.bindTo(viewModel: viewModel, afterLoad: true)
+            return UIViewControllerRouterAction.push(source: source, destination: destination)
         default:
             return EmptyRouterAction()
         }
@@ -90,7 +94,8 @@ struct Router : RouterType {
     
     public static func root() -> UIViewController {
         
-        let source:ShowsViewController = (Storyboard.main.scene(.showList) as! ShowsViewController).withViewModel(ShowsViewModel())
+        let source:ShowsViewController = (Storyboard.main.scene(.showList) as ShowsViewController)
+            .withViewModel(ViewModelFactory.showsViewModel())
        
         
         return source.withNavigation()
