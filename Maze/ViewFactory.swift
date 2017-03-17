@@ -1,11 +1,3 @@
-//
-//  ViewFactory.swift
-//  EPTA
-//
-//  Created by Stefano Mondino on 14/12/16.
-//  Copyright © 2016 EPTA. All rights reserved.
-//
-
 import UIKit
 import Boomerang
 
@@ -26,37 +18,6 @@ enum SceneIdentifier : String, ListIdentifier {
 
 extension ListViewModelType {
     var listIdentifiers: [ListIdentifier] { return Cell.all() }
-}
-
-enum Decoration: String, ListIdentifier {
-    case resources = "ResourcesDecorationView"
-    case shelf = "ShelfDecorationView"
-    case none = ""
-    
-    var name: String { return self.rawValue }
-    var type: String?  { return nil }
-    var height: CGFloat {
-        switch self {
-        case .none:
-            return 0
-        case .shelf:
-            return 262.0
-        default:
-            return 54.0
-        }
-    }
-}
-
-enum ActionViewIdentifier: String, ListIdentifier {
-    case login = "InsertEmailView"
-    case checkUpdates = "CheckUpdateView"
-    case askForLogin = "AskForLoginView"
-    case appUpdated = "AppIsUpdateView"
-    case downloadsAvailable = "DownloadsAvailableView"
-    case downloading = "DownloadInProgressView"
-    
-    var name: String { return self.rawValue }
-    var type: String? { return nil }
 }
 
 enum Cell: String, ListIdentifier {

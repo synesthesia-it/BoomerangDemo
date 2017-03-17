@@ -44,7 +44,6 @@
             </constraints>
             <size key="customSize" width="458" height="218"/>
             <connections>
-                <outlet property="image" destination="xaG-5c-Xc6" id="JSp-as-Teb"/>
                 <outlet property="imageView" destination="xaG-5c-Xc6" id="w2L-br-qyg"/>
                 <outlet property="lbl_title" destination="9mR-QP-hrh" id="h7b-LB-DSr"/>
             </connections>

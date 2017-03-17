@@ -28,6 +28,10 @@ class ShowItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
         guard let viewModel = viewModel as? ShowItemViewModel else { return }
         self.viewModel = viewModel
         self.lbl_title.text = viewModel.itemTitle
-        SYNImageDownloader.download(from: viewModel.imageUrl).bindTo(imageView.rx.image).addDisposableTo(disposeBag)
+        self.disposeBag = DisposeBag()
+        viewModel.image?
+            .bindTo(self.imageView.rx.image)
+            .addDisposableTo(self.disposeBag)
+        //SYNImageDownloader.download(from: viewModel.imageUrl).bindTo(imageView.rx.image).addDisposableTo(disposeBag)
     }
 }

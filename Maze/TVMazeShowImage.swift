@@ -8,19 +8,23 @@
 
 import Foundation
 import Gloss
-
+import RxSwift
 extension TVMaze {
 
-    struct ShowImage: Decodable {
+    struct ShowImage:  ObservableImageType {
         
-        let medium: String?
-        let original: String?
+        let path: String?
         
-        init(json: JSON) {
-            self.medium = "medium" <~~ json
-            self.original = "original" <~~ json
+        
+        init(path: String) {
+            self.path = path
         }
-        
+        init (url:URL) {
+            self.path = url.absoluteString
+        }
+        func get() -> Observable<UIImage?> {
+            return ImageDownloader.download(from: self.path)
+        }
     }
 
 }

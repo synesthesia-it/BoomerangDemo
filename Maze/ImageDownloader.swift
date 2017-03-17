@@ -12,18 +12,18 @@ import RxSwift
 import Gloss
 import AlamofireImage
 
-struct SYNImageDownloader {
+struct ImageDownloader {
     
     private static let downloader = {
         // AlamofireImage's downloader
-        return ImageDownloader()
+        return AlamofireImage.ImageDownloader()
     }()
     
     static func download(from urlString: String?) -> Observable<UIImage?> {
         guard let urlString = urlString, let url = URL(string: urlString) else {
             return .just(nil)
         }
-        return SYNImageDownloader.download(url)
+        return ImageDownloader.download(url)
     }
     
     static func  download(_ url: URL) -> Observable<UIImage?> {
@@ -48,9 +48,14 @@ struct SYNImageDownloader {
     
 }
 
-extension UIImageView {
-    
-    func download(from urlString: String?) {
+protocol ObservableImageType {
+    func get() -> Observable<UIImage?>
+}
+
+typealias ObservableImage = Observable<UIImage?>
+
+extension UIImage : ObservableImageType {
+    func get() -> ObservableImage {
+        return .just(self)
     }
-    
 }

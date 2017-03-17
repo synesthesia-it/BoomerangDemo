@@ -20,6 +20,7 @@ enum ShowSelectionOutput : SelectionOutput {
 }
 
 final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable {
+    
     var dataHolder: ListDataHolderType = ListDataHolder()
     
     func itemViewModel(fromModel model: ModelType) -> ItemViewModelType? {
@@ -27,7 +28,6 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable {
             return nil
         }
         return ShowItemViewModel(model:model)
-        
         //ViewModelFactory.__proper_factory_method_here()
     }
     
@@ -37,15 +37,15 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable {
             guard let model = (self.model(atIndex:indexPath) as? TVMaze.Show) else {
                 return .empty()
             }
-            return .empty()
+            return .just(.viewModel(ShowsViewModel()))
 //            let destinationViewModel = __proper_factory_method_here__
 //            return .just(.viewModel(destinationViewModel))
         }
     }
     
-    
     init() {
         let obs = TVMaze.getShows(withQuery: "Alias").structured()
         self.dataHolder = ListDataHolder(data:obs)
     }
+    
 }

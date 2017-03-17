@@ -14,13 +14,15 @@ final class ShowItemViewModel: ItemViewModelType {
     
     var model: ItemViewModelType.Model
     var itemIdentifier: ListIdentifier = Cell.showItem
+    
     var itemTitle: String?
     var imageUrl: String?
+    var image:ObservableImage?
     
     init(model: TVMaze.Show) {
         self.model = model
         self.itemTitle = model.name
-        self.imageUrl = model.image?.medium
+        self.image = model.thumbnail?.get().shareReplay(1)
     }
     
 }

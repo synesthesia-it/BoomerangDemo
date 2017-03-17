@@ -44,11 +44,9 @@ struct Router : RouterType {
         _ = source.dismiss(animated: true, completion: nil)
     }
     
-    public static func start(_ delegate:AppDelegate) {
-        
+    public static func start(_ delegate: AppDelegate) {
         delegate.window = UIWindow(frame: UIScreen.main.bounds)
         delegate.window?.rootViewController = self.root()
-        
         delegate.window?.makeKeyAndVisible()
         
     }
@@ -73,12 +71,10 @@ struct Router : RouterType {
     
     public static func from<Source> (_ source:Source, viewModel:ViewModelType) -> RouterAction where Source: UIViewController {
         switch viewModel {
-        
         default:
             return EmptyRouterAction()
         }
     }
-
     
     public static func open<Source> (_ url:URL?, from source:Source) -> RouterAction
         where Source: UIViewController{
@@ -103,18 +99,18 @@ struct Router : RouterType {
     public static func rootController() -> UIViewController? {
         return UIApplication.shared.keyWindow?.rootViewController
     }
+    
     public static func restart() {
         UIApplication.shared.keyWindow?.rootViewController = Router.root()
     }
 
     public static func openApp<Source> (_ url:URL?, from source:Source) -> RouterAction
         where Source: UIViewController{
-            if (url == nil) {return EmptyRouterAction()}
+            if (url == nil) { return EmptyRouterAction() }
             
             return UIViewControllerRouterAction.custom(action: {
                 UIApplication.shared.openURL(url!)
             })
-            
     }
     
     public static func playVideo<Source> (_ url:URL?, from source:Source) -> RouterAction

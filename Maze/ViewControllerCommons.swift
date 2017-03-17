@@ -18,12 +18,6 @@ import SpinKit
 import Localize_Swift
 import AVKit
 
-//extension String{
-//    func localized() -> String {
-//        return NSLocalizedString(self, comment: "")
-//    }
-//}
-
 enum SharedSelectionOutput : SelectionOutput {
     case exit
     case dismiss
@@ -32,40 +26,6 @@ enum SharedSelectionOutput : SelectionOutput {
     case preview(URL?)
     case playVideo(URL?)
     case confirm(title: String, message: String, confirmTitle: String, action: ((Void)->()))
-}
-
-enum TabBarItemType {
-    
-    case masiWorld
-    case wines
-    case cantina
-    case company
-    case resources
-    
-    var title:String? {
-        switch self {
-        case .masiWorld : return  "Masi World".localized()
-        case .wines: return "Wines".localized()
-        case .cantina: return "Cantina Boscaini".localized()
-        case .company: return "Company".localized()
-        case .resources: return "Resources".localized()
-        }
-    }
-    
-    var icon:UIImage? {
-        return UIImage(named:self.iconName)
-    }
-    
-    private var iconName:String {
-        switch self {
-        case .masiWorld : return  "icon_masiWorld"
-        case .wines: return "icon_products"
-        case .cantina: return "icon_boscaini"
-        case .company: return "icon_company"
-        case .resources: return "icon_resources"
-        }
-    }
-    
 }
 
 class NavigationController: UINavigationController, UINavigationBarDelegate {
@@ -152,6 +112,7 @@ extension KeyboardResizable where Self: UIViewController {
     }
     
 }
+
 protocol Collectionable {
     weak var collectionView:UICollectionView! {get}
     func setupCollectionView()
@@ -188,54 +149,41 @@ extension UIViewController {
         return disposeBag
     }
     
-    
     func setup() -> UIViewController {
         let closure = {
-            
-            //        var test = self.view.subviews.filter{$0 is UICollectionView}
             (self as? Collectionable)?.setupCollectionView()
-            
-            //        if ((self.navigationController?.viewControllers.count ?? 0) > 1) {
-            //            _ = self.withBackButton()
-            //        }
-            
         }
         self.automaticallyAdjustsScrollViewInsets = false
-        if (self.isViewLoaded) {
+        if self.isViewLoaded {
             closure()
-        }
-        else {
+        } else {
             _ = self.rx.methodInvoked(#selector(viewDidLoad)).delay(0.0, scheduler: MainScheduler.instance).subscribe(onNext:{_ in closure()})
         }
-        
         return self
     }
-    
     
     func back() {
         _ = self.navigationController?.popViewController(animated: true)
     }
+    
     func withBackButton() -> UIViewController {
         let item = UIBarButtonItem(image: UIImage(named: "ic_back"), style: .done, target: self, action: #selector(back))
         self.navigationItem.leftBarButtonItem = item
         return self
     }
 
-    
-    private var loaderCount:Int {
-        
+    private var loaderCount: Int {
         get { return objc_getAssociatedObject(self, &AssociatedKeys.loaderCount) as? Int ?? 0}
         set { objc_setAssociatedObject(self, &AssociatedKeys.loaderCount, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)}
-        
     }
+    
     func loaderView() -> UIView {
         return RTSpinKitView(style: .stylePulse, color: UIColor.red, spinnerSize: 44)
     }
+    
     func loaderContentView() -> UIView {
         return self.navigationController?.view ?? self.view
     }
-    
-    
     
     func showLoader() {
         if self.loaderCount == 0 {
@@ -281,8 +229,6 @@ extension UIViewController {
         case .confirm(let title, let message, let confirmTitle, let action):
             Router.confirm(title: title, message: message, confirmationTitle: confirmTitle, from: self, action: action).execute()
         case .playVideo(let url):
-            break
-        default:
             break
         }
     }

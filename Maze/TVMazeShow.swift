@@ -16,7 +16,8 @@ extension TVMaze {
         
         let id: Int
         let name: String
-        let image: TVMaze.ShowImage?
+        var thumbnail: TVMaze.ShowImage?
+        var original: TVMaze.ShowImage?
         
         init?(json: JSON) {
             guard let name: String = "name" <~~ json,
@@ -25,7 +26,9 @@ extension TVMaze {
             
             self.id = id
             self.name = name
-            self.image = "image" <~~ json
+            if let thumbPath:String = "image.medium" <~~ json {
+                self.thumbnail = TVMaze.ShowImage(path: thumbPath)
+            }
         }
         
     }

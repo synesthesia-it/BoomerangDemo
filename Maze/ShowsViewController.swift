@@ -14,29 +14,34 @@ import Boomerang
 class ShowsViewController : UIViewController, ViewModelBindable, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
+    
     var viewModel: ShowsViewModel?
     
     var flow:UICollectionViewFlowLayout? {
         return self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     func bindTo(viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? ShowsViewModel else { return }
+        
         self.viewModel = viewModel
         self.collectionView.bindTo(viewModel:viewModel)
         self.collectionView.delegate = self
+        
         viewModel.selection.elements.subscribe(onNext: { selection in
             switch selection {
             case .viewModel(let viewModel):
                 Router.from(self,viewModel: viewModel).execute()
             }
         }).addDisposableTo(self.disposeBag)
+        
         viewModel.reload()
+        
+        LocationManager.locationUpdates
+            .take(10)
+            .takeUntil(viewModel.selection.elements)
+            .subscribe(onNext:{_ in print("!")})
+            .addDisposableTo(self.disposeBag)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
