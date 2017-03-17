@@ -28,7 +28,9 @@
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQa-hk-HDL">
                         <rect key="frame" x="428" y="94" width="30" height="30"/>
-                        <state key="normal" title="&gt;"/>
+                        <state key="normal" title="&gt;">
+                            <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
                     </button>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="d8P-4F-plM">
                         <rect key="frame" x="152" y="87" width="276" height="45"/>
