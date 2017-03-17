@@ -78,15 +78,16 @@ struct Router : RouterType {
     
     public static func open<Source> (_ url:URL?, from source:Source) -> RouterAction
         where Source: UIViewController{
-            if (url == nil) {return EmptyRouterAction()}
-            if (!SFSafariViewController.canOpenURL(URL:url!)) {
-                return UIViewControllerRouterAction.custom(action: {
+            if url == nil { return EmptyRouterAction() }
+            if !SFSafariViewController.canOpenURL(URL: url!) {
+                return UIViewControllerRouterAction.custom {
                     UIApplication.shared.openURL(url!)
-                })
+                }
             }
             let vc = SFSafariViewController(url: url!, entersReaderIfAvailable: true)
             return UIViewControllerRouterAction.modal(source: source, destination: vc, completion: nil)
     }
+    
     public static func root() -> UIViewController {
         
         let source:ShowsViewController = (Storyboard.main.scene(.showList) as! ShowsViewController).withViewModel(ShowsViewModel())
@@ -94,7 +95,6 @@ struct Router : RouterType {
         
         return source.withNavigation()
     }
-    
     
     public static func rootController() -> UIViewController? {
         return UIApplication.shared.keyWindow?.rootViewController
@@ -104,17 +104,14 @@ struct Router : RouterType {
         UIApplication.shared.keyWindow?.rootViewController = Router.root()
     }
 
-    public static func openApp<Source> (_ url:URL?, from source:Source) -> RouterAction
-        where Source: UIViewController{
-            if (url == nil) { return EmptyRouterAction() }
-            
-            return UIViewControllerRouterAction.custom(action: {
-                UIApplication.shared.openURL(url!)
-            })
+    public static func openApp<Source> (_ url: URL?, from source: Source) -> RouterAction where Source: UIViewController{
+        if url == nil { return EmptyRouterAction() }
+        return UIViewControllerRouterAction.custom {
+            UIApplication.shared.openURL(url!)
+        }
     }
     
-    public static func playVideo<Source> (_ url:URL?, from source:Source) -> RouterAction
-        where Source: UIViewController{
+    public static func playVideo<Source> (_ url: URL?, from source: Source) -> RouterAction where Source: UIViewController {
             guard let urlFormatted:URL = URL(string:url?.absoluteString.removingPercentEncoding ?? "") else {
                 return EmptyRouterAction()
             }
@@ -128,4 +125,5 @@ struct Router : RouterType {
                 playerController.player?.play()
             })
     }
+    
 }
