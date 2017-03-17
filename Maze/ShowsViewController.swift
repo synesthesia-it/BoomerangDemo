@@ -11,6 +11,7 @@ import RxSwift
 import RxCocoa
 import Boomerang
 import Action
+
 class ShowsViewController : UIViewController, ViewModelBindable, ViewControllerActionBindable,UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!

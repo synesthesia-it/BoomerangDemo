@@ -11,7 +11,6 @@ import RxSwift
 import RxCocoa
 import Boomerang
 
-
 class ShowActorsViewController : UIViewController, ViewModelBindable, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,6 +18,7 @@ class ShowActorsViewController : UIViewController, ViewModelBindable, UICollecti
     var flow:UICollectionViewFlowLayout? {
         return self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
     }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -44,16 +44,21 @@ class ShowActorsViewController : UIViewController, ViewModelBindable, UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.autosizeItemAt(indexPath: indexPath, itemsPerLine: 1)
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.viewModel?.selection.execute(.item(indexPath))
     }
+    
 }
