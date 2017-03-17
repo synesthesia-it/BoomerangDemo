@@ -34,10 +34,10 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable {
     lazy var selection:Action<ShowSelectionInput,ShowSelectionOutput> = Action { input in
         switch input {
         case .item(let indexPath):
-            guard let model = (self.model(atIndex:indexPath) as? TVMaze.Show) else {
+            guard let model = (self.model(atIndex: indexPath) as? TVMaze.Show) else {
                 return .empty()
             }
-            return Observable<ShowSelectionOutput>.just(.viewModel(ViewModelFactory.genresViewModel(forShow:model))).delay(3, scheduler:MainScheduler.instance)
+            return Observable<ShowSelectionOutput>.just(.viewModel(ViewModelFactory.genresViewModel(forShow: model)))
 //            let destinationViewModel = __proper_factory_method_here__
 //            return .just(.viewModel(destinationViewModel))
         }
@@ -46,7 +46,7 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable {
     init() {
         let obs = TVMaze.getShows(withQuery: "Alias")
             .map{array -> [ModelType] in
-                var a:[ModelType] = array
+                var a: [ModelType] = array
                 a.append(ShowItemViewModel(model:"TEST"))
                 return a
             }

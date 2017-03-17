@@ -21,6 +21,11 @@ class ShowsViewController : UIViewController, ViewModelBindable, ViewControllerA
         return self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.title = "TV Shows"
+    }
+    
     func bindTo(viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? ShowsViewModel else { return }
         

@@ -27,20 +27,26 @@
                         </constraints>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9mR-QP-hrh">
-                        <rect key="frame" x="156" y="99" width="281" height="21.5"/>
+                        <rect key="frame" x="156" y="99" width="252" height="21.5"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yQa-hk-HDL">
+                        <rect key="frame" x="428" y="94" width="30" height="30"/>
+                        <state key="normal" title="&gt;"/>
+                    </button>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="xaG-5c-Xc6" secondAttribute="bottom" id="0eZ-w5-Y07"/>
+                <constraint firstAttribute="trailing" secondItem="yQa-hk-HDL" secondAttribute="trailing" id="N6V-04-5EH"/>
                 <constraint firstItem="9mR-QP-hrh" firstAttribute="leading" secondItem="xaG-5c-Xc6" secondAttribute="trailing" constant="19.5" id="NIC-lf-08A"/>
                 <constraint firstItem="9mR-QP-hrh" firstAttribute="centerY" secondItem="xaG-5c-Xc6" secondAttribute="centerY" id="ZQm-EO-66F"/>
                 <constraint firstItem="xaG-5c-Xc6" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="gfD-QN-txd"/>
                 <constraint firstItem="xaG-5c-Xc6" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="kqw-rl-v0K"/>
-                <constraint firstAttribute="trailing" secondItem="9mR-QP-hrh" secondAttribute="trailing" constant="21" id="qR2-Nc-ah7"/>
+                <constraint firstAttribute="trailing" secondItem="9mR-QP-hrh" secondAttribute="trailing" constant="50" id="qR2-Nc-ah7"/>
+                <constraint firstItem="yQa-hk-HDL" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="vLc-Xw-91A"/>
             </constraints>
             <size key="customSize" width="458" height="218"/>
             <connections>
