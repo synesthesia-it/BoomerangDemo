@@ -19,11 +19,6 @@ class ShowActorsViewController : UIViewController, ViewModelBindable, UICollecti
         return self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-    }
-    
     func bindTo(viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? ShowActorsViewModel else {
             return
@@ -54,7 +49,7 @@ class ShowActorsViewController : UIViewController, ViewModelBindable, UICollecti
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return collectionView.autosizeItemAt(indexPath: indexPath, itemsPerLine: 1)
+        return collectionView.autosizeItemAt(indexPath: indexPath, itemsPerLine: 2)
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {

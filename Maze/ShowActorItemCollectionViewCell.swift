@@ -16,7 +16,9 @@ class ShowActorItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
     
     var viewModel:ItemViewModelType?
     
-    
+    @IBOutlet weak var actorName: UILabel!
+    @IBOutlet weak var characterName: UILabel!
+    @IBOutlet weak var actorPhoto: UIImageView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -28,6 +30,10 @@ class ShowActorItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
             return
         }
         self.viewModel = viewModel
+        self.actorName.text = viewModel.actorName
+        if let charName = viewModel.characterName {
+            self.characterName.text = "as \(charName)"
+        }
     }
     
 }
