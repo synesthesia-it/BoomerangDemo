@@ -34,6 +34,11 @@ class ShowActorItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
         if let charName = viewModel.characterName {
             self.characterName.text = "as \(charName)"
         }
+        
+        self.disposeBag = DisposeBag()
+        viewModel.actorPhoto?
+            .bindTo(self.actorPhoto.rx.image)
+            .addDisposableTo(self.disposeBag)
     }
     
 }

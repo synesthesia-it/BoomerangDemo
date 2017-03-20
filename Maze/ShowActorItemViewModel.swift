@@ -17,11 +17,13 @@ final class ShowActorItemViewModel : ItemViewModelType {
     
     var actorName: String?
     var characterName: String?
+    var actorPhoto: ObservableImage?
     
     init(model: TVMaze.Actor) {
         self.model = model
         self.actorName = model.person?.name
         self.characterName = model.character?.name
+        self.actorPhoto = model.person?.mediumImage?.get().shareReplay(1)
     }
     
 }
