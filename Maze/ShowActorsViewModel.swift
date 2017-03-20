@@ -27,8 +27,7 @@ final class ShowActorsViewModel: ListViewModelType, ViewModelTypeSelectable {
         guard let item = model as? TVMaze.Actor else {
             return model as? ItemViewModelType
         }
-        return ShowItemViewModel(model: item)
-        //return ViewModelFactory.__proper_factory_method_here()
+        return ViewModelFactory.actorItemViewModel(withModel: item)
     }
     
     lazy var selection:Action<ShowActorSelectionInput,ShowActorSelectionOutput> = Action { input in

@@ -35,7 +35,7 @@ class ShowActorsViewController : UIViewController, ViewModelBindable, UICollecti
         viewModel.selection.elements.subscribe(onNext:{ selection in
             switch selection {
             case .viewModel(let viewModel):
-                Router.from(self,viewModel: viewModel).execute()
+                Router.from(self, viewModel: viewModel).execute()
             }
         }).addDisposableTo(self.disposeBag)
         viewModel.reload()

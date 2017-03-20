@@ -12,6 +12,7 @@ enum Storyboard : String {
 enum SceneIdentifier : String, ListIdentifier {
     case showList = "list"
     case genres = "genres"
+    case actors = "actors"
     var name: String { return self.rawValue }
     var type: String? { return nil }
 }
@@ -22,7 +23,7 @@ extension ListViewModelType {
 
 enum Cell: String, ListIdentifier {
     case showItem = "ShowItemCollectionViewCell"
-    case actorItem = "ActorItemCollectionViewCell"
+    case actorItem = "ShowActorItemCollectionViewCell"
     case genre = "GenreItemCollectionViewCell"
     static func all() -> [Cell] {
         return [

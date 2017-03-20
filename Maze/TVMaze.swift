@@ -24,7 +24,7 @@ struct TVMaze {
         }
         return self.provider.request(.searchShows(query: query))
             .mapArray(type: TVMaze.ShowResult.self)
-            .map {shows in
+            .map { shows in
                 return shows
                     .map { $0.show }
                     .flatMap{ $0 }
