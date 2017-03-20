@@ -15,6 +15,8 @@ import RxCocoa
 class ShowActorItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
     
     var viewModel:ItemViewModelType?
+    
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

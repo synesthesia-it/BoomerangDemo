@@ -35,7 +35,9 @@ struct TVMaze {
     static func getCast(forShow show: TVMaze.Show) -> Observable<[TVMaze.Actor]> {
         return self.provider.request(.castOfShow(id: show.id))
             .mapArray(type: TVMaze.Actor.self)
-            .map { actors in actors.flatMap { $0 } }
+            .map { actors in
+                print(actors.count)
+                return actors.flatMap { $0 } }
             .catchErrorJustReturn([])
     }
     
