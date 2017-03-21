@@ -21,7 +21,7 @@ class GenresViewController : UIViewController, ViewModelBindable, UICollectionVi
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        title = "Genres"
     }
     
     func bindTo(viewModel: ViewModelType?) {

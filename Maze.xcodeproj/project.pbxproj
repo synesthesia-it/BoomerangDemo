@@ -13,8 +13,6 @@
 		130059E01E7BE34A0055793B /* GenresViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130059DB1E7BE34A0055793B /* GenresViewController.swift */; };
 		130059E11E7BE34A0055793B /* GenresViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130059DC1E7BE34A0055793B /* GenresViewModel.swift */; };
 		130059E41E7BFC5F0055793B /* TVMazeNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130059E31E7BFC5F0055793B /* TVMazeNetwork.swift */; };
-		130059F51E7C1D0D0055793B /* ShowDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130059F41E7C1D0D0055793B /* ShowDetailViewController.swift */; };
-		130059F71E7C1D1A0055793B /* ShowDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130059F61E7C1D1A0055793B /* ShowDetailViewModel.swift */; };
 		130059FD1E7C27B90055793B /* ShowActorItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130059F81E7C27B90055793B /* ShowActorItemCollectionViewCell.swift */; };
 		130059FE1E7C27B90055793B /* ShowActorItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 130059F91E7C27B90055793B /* ShowActorItemCollectionViewCell.xib */; };
 		130059FF1E7C27B90055793B /* ShowActorItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 130059FA1E7C27B90055793B /* ShowActorItemViewModel.swift */; };
@@ -56,8 +54,6 @@
 		130059DB1E7BE34A0055793B /* GenresViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenresViewController.swift; sourceTree = "<group>"; };
 		130059DC1E7BE34A0055793B /* GenresViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenresViewModel.swift; sourceTree = "<group>"; };
 		130059E31E7BFC5F0055793B /* TVMazeNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMazeNetwork.swift; sourceTree = "<group>"; };
-		130059F41E7C1D0D0055793B /* ShowDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailViewController.swift; sourceTree = "<group>"; };
-		130059F61E7C1D1A0055793B /* ShowDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowDetailViewModel.swift; sourceTree = "<group>"; };
 		130059F81E7C27B90055793B /* ShowActorItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowActorItemCollectionViewCell.swift; sourceTree = "<group>"; };
 		130059F91E7C27B90055793B /* ShowActorItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowActorItemCollectionViewCell.xib; sourceTree = "<group>"; };
 		130059FA1E7C27B90055793B /* ShowActorItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowActorItemViewModel.swift; sourceTree = "<group>"; };
@@ -133,8 +129,6 @@
 		130059F11E7C1CD30055793B /* ShowDetail */ = {
 			isa = PBXGroup;
 			children = (
-				130059F41E7C1D0D0055793B /* ShowDetailViewController.swift */,
-				130059F61E7C1D1A0055793B /* ShowDetailViewModel.swift */,
 			);
 			name = ShowDetail;
 			sourceTree = "<group>";
@@ -402,7 +396,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				130059F71E7C1D1A0055793B /* ShowDetailViewModel.swift in Sources */,
 				13005A041E7C27FA0055793B /* TVMazeShowActor.swift in Sources */,
 				130059E41E7BFC5F0055793B /* TVMazeNetwork.swift in Sources */,
 				133E19081E7989BC00FE0EEE /* ShowItemCollectionViewCell.swift in Sources */,
@@ -422,7 +415,6 @@
 				13D6D8E91E7A858500B092B2 /* TVMazeShowResult.swift in Sources */,
 				13D6D8ED1E7ACA7200B092B2 /* LocationManager.swift in Sources */,
 				13D6D8E41E7A789E00B092B2 /* ImageDownloader.swift in Sources */,
-				130059F51E7C1D0D0055793B /* ShowDetailViewController.swift in Sources */,
 				133E18DB1E79811700FE0EEE /* Router.swift in Sources */,
 				13005A011E7C27B90055793B /* ShowActorsViewModel.swift in Sources */,
 				130059E11E7BE34A0055793B /* GenresViewModel.swift in Sources */,

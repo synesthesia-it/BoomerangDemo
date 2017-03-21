@@ -20,6 +20,11 @@ class ShowActorsViewController : UIViewController, ViewModelBindable, UICollecti
         return self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
     }
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        title = "Actors"
+    }
+    
     func bindTo(viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? ShowActorsViewModel else {
             return
