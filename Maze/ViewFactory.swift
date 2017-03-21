@@ -11,6 +11,7 @@ enum Storyboard : String {
 
 enum SceneIdentifier : String, ListIdentifier {
     case showList = "list"
+    case showDetail = "showDetail"
     case genres = "genres"
     case actors = "actors"
     var name: String { return self.rawValue }

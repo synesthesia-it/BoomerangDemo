@@ -37,6 +37,11 @@
 		133E190A1E7989BC00FE0EEE /* ShowItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E19051E7989BC00FE0EEE /* ShowItemViewModel.swift */; };
 		133E190B1E7989BC00FE0EEE /* ShowsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E19061E7989BC00FE0EEE /* ShowsViewController.swift */; };
 		133E190C1E7989BC00FE0EEE /* ShowsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E19071E7989BC00FE0EEE /* ShowsViewModel.swift */; };
+		135B3D061E8120C900662577 /* DetailItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135B3D011E8120C900662577 /* DetailItemCollectionViewCell.swift */; };
+		135B3D071E8120C900662577 /* DetailItemCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 135B3D021E8120C900662577 /* DetailItemCollectionViewCell.xib */; };
+		135B3D081E8120C900662577 /* DetailItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135B3D031E8120C900662577 /* DetailItemViewModel.swift */; };
+		135B3D091E8120C900662577 /* DetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135B3D041E8120C900662577 /* DetailsViewController.swift */; };
+		135B3D0A1E8120C900662577 /* DetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 135B3D051E8120C900662577 /* DetailsViewModel.swift */; };
 		13D6D8E21E7A777E00B092B2 /* TVMazeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6D8E11E7A777E00B092B2 /* TVMazeService.swift */; };
 		13D6D8E41E7A789E00B092B2 /* ImageDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6D8E31E7A789E00B092B2 /* ImageDownloader.swift */; };
 		13D6D8E71E7A854F00B092B2 /* TVMazeShow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6D8E61E7A854F00B092B2 /* TVMazeShow.swift */; };
@@ -80,6 +85,11 @@
 		133E19051E7989BC00FE0EEE /* ShowItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowItemViewModel.swift; sourceTree = "<group>"; };
 		133E19061E7989BC00FE0EEE /* ShowsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsViewController.swift; sourceTree = "<group>"; };
 		133E19071E7989BC00FE0EEE /* ShowsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowsViewModel.swift; sourceTree = "<group>"; };
+		135B3D011E8120C900662577 /* DetailItemCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailItemCollectionViewCell.swift; sourceTree = "<group>"; };
+		135B3D021E8120C900662577 /* DetailItemCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = DetailItemCollectionViewCell.xib; sourceTree = "<group>"; };
+		135B3D031E8120C900662577 /* DetailItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailItemViewModel.swift; sourceTree = "<group>"; };
+		135B3D041E8120C900662577 /* DetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewController.swift; sourceTree = "<group>"; };
+		135B3D051E8120C900662577 /* DetailsViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailsViewModel.swift; sourceTree = "<group>"; };
 		13D6D8E11E7A777E00B092B2 /* TVMazeService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMazeService.swift; sourceTree = "<group>"; };
 		13D6D8E31E7A789E00B092B2 /* ImageDownloader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageDownloader.swift; sourceTree = "<group>"; };
 		13D6D8E61E7A854F00B092B2 /* TVMazeShow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMazeShow.swift; sourceTree = "<group>"; };
@@ -129,6 +139,11 @@
 		130059F11E7C1CD30055793B /* ShowDetail */ = {
 			isa = PBXGroup;
 			children = (
+				135B3D011E8120C900662577 /* DetailItemCollectionViewCell.swift */,
+				135B3D021E8120C900662577 /* DetailItemCollectionViewCell.xib */,
+				135B3D031E8120C900662577 /* DetailItemViewModel.swift */,
+				135B3D041E8120C900662577 /* DetailsViewController.swift */,
+				135B3D051E8120C900662577 /* DetailsViewModel.swift */,
 			);
 			name = ShowDetail;
 			sourceTree = "<group>";
@@ -333,6 +348,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				130059DE1E7BE34A0055793B /* GenreItemCollectionViewCell.xib in Resources */,
+				135B3D071E8120C900662577 /* DetailItemCollectionViewCell.xib in Resources */,
 				133E18EF1E79811700FE0EEE /* LaunchScreen.storyboard in Resources */,
 				130059FE1E7C27B90055793B /* ShowActorItemCollectionViewCell.xib in Resources */,
 				133E18E91E79811700FE0EEE /* Assets.xcassets in Resources */,
@@ -398,6 +414,7 @@
 			files = (
 				13005A041E7C27FA0055793B /* TVMazeShowActor.swift in Sources */,
 				130059E41E7BFC5F0055793B /* TVMazeNetwork.swift in Sources */,
+				135B3D081E8120C900662577 /* DetailItemViewModel.swift in Sources */,
 				133E19081E7989BC00FE0EEE /* ShowItemCollectionViewCell.swift in Sources */,
 				13D6D8EB1E7A916700B092B2 /* TVMazeShowImage.swift in Sources */,
 				133E18D61E79811700FE0EEE /* ViewModelFactory.swift in Sources */,
@@ -406,9 +423,11 @@
 				133E18EC1E79811700FE0EEE /* ViewControllerCommons.swift in Sources */,
 				133E18E21E79811700FE0EEE /* Operators.swift in Sources */,
 				13005A001E7C27B90055793B /* ShowActorsViewController.swift in Sources */,
+				135B3D0A1E8120C900662577 /* DetailsViewModel.swift in Sources */,
 				130059FF1E7C27B90055793B /* ShowActorItemViewModel.swift in Sources */,
 				133E18CE1E79811700FE0EEE /* AppDelegate.swift in Sources */,
 				133E190B1E7989BC00FE0EEE /* ShowsViewController.swift in Sources */,
+				135B3D091E8120C900662577 /* DetailsViewController.swift in Sources */,
 				133E18E01E79811700FE0EEE /* Utilities.swift in Sources */,
 				13D6D8E71E7A854F00B092B2 /* TVMazeShow.swift in Sources */,
 				13D6D8E21E7A777E00B092B2 /* TVMazeService.swift in Sources */,
@@ -426,6 +445,7 @@
 				133E18F71E79822600FE0EEE /* TVMaze.swift in Sources */,
 				133E18E41E79811700FE0EEE /* SeparatorLayout.swift in Sources */,
 				130059DF1E7BE34A0055793B /* GenreItemViewModel.swift in Sources */,
+				135B3D061E8120C900662577 /* DetailItemCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

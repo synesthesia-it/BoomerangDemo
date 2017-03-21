@@ -18,7 +18,7 @@ struct TVMaze {
     
     private static let provider = RxMoyaProvider<TVMaze.Service>()
     
-    static func getShows(withQuery query: String) -> Observable<[TVMaze.Show]> {
+    static func searchShow(withQuery query: String) -> Observable<[TVMaze.Show]> {
         if query.isEmpty {
             return .just([])
         }
@@ -39,6 +39,11 @@ struct TVMaze {
                 print(actors.count)
                 return actors.flatMap { $0 } }
             .catchErrorJustReturn([])
+    }
+    
+    static func getShow(id showId: Int) -> Observable<TVMaze.Show> {
+        return self.provider.request(.castOfShow(id: showId))
+            .mapObject(type: TVMaze.Show.self)
     }
     
 }

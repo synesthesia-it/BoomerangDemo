@@ -44,7 +44,7 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable {
     }
     
     init() {
-        let obs = TVMaze.getShows(withQuery: "Alias")
+        let obs = TVMaze.searchShow(withQuery: "Alias")
             .map{array -> [ModelType] in
                 var a: [ModelType] = array
 //                a.append(ShowItemViewModel(model:"TEST"))

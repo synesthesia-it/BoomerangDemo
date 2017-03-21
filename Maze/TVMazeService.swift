@@ -19,6 +19,7 @@ extension TVMaze {
     
     enum Service {
         case searchShows(query: String)
+        case getShow(id: Int)
         case castOfShow(id: Int)
     }
     
@@ -32,6 +33,8 @@ extension TVMaze.Service: TargetType {
         switch self {
         case .searchShows:
             return "/search/shows"
+        case .getShow(let id):
+            return "/shows/\(id)"
         case .castOfShow(let id):
             return "/shows/\(id)/cast"
         }
@@ -39,7 +42,7 @@ extension TVMaze.Service: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .searchShows, .castOfShow:
+        case .searchShows, .getShow, .castOfShow:
             return .get
         }
     }
@@ -48,6 +51,8 @@ extension TVMaze.Service: TargetType {
         switch self {
         case .searchShows(let query):
             return ["q": query]
+        case .getShow:
+            return ["embed": ["episodes", "cast"]]
         default:
             return nil
         }

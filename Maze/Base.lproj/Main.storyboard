@@ -47,7 +47,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="neI-6P-LJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="122" y="107"/>
+            <point key="canvasLocation" x="1674" y="107"/>
         </scene>
         <!--Genres View Controller-->
         <scene sceneID="1mx-sV-EH5">
@@ -87,6 +87,47 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eCj-9H-b4k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="225" y="107"/>
+        </scene>
+        <!--Details View Controller-->
+        <scene sceneID="bGX-Co-WLU">
+            <objects>
+                <viewController storyboardIdentifier="showDetail" id="PJI-gu-hot" customClass="DetailsViewController" customModule="Maze" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ys0-wV-BWD"/>
+                        <viewControllerLayoutGuide type="bottom" id="64T-9E-aC0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="02d-0I-rEq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="1mT-MU-aMO">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="qlR-AF-kOY">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1mT-MU-aMO" firstAttribute="leading" secondItem="02d-0I-rEq" secondAttribute="leading" id="a3u-28-SVq"/>
+                            <constraint firstAttribute="trailing" secondItem="1mT-MU-aMO" secondAttribute="trailing" id="iln-k9-pWd"/>
+                            <constraint firstItem="64T-9E-aC0" firstAttribute="top" secondItem="1mT-MU-aMO" secondAttribute="bottom" id="r4P-GY-EQv"/>
+                            <constraint firstItem="1mT-MU-aMO" firstAttribute="top" secondItem="Ys0-wV-BWD" secondAttribute="bottom" id="sZy-SS-DC7"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="1mT-MU-aMO" id="Hro-BY-DRG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iF5-qV-8hK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="211" y="770"/>
         </scene>
         <!--Show Actors View Controller-->
         <scene sceneID="GlP-o4-LWF">

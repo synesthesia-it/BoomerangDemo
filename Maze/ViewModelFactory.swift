@@ -7,6 +7,15 @@ import Boomerang
 typealias Selection = Action<SelectionInput, SelectionOutput>
 
 struct ViewModelFactory {
+    
+    static func showDetailViewModel() -> ViewModelType {
+        return DetailsViewModel()
+    }
+    
+    static func showDetailItemViewModel(withModel model: TVMaze.Show) -> ItemViewModelType {
+        return DetailItemViewModel(model: model)
+    }
+    
     static func showsViewModel() -> ViewModelType {
         return ShowsViewModel()
     }

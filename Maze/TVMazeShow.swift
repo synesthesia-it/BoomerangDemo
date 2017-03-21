@@ -19,8 +19,9 @@ extension TVMaze {
         let name: String
         let status: String?
         var thumbnail: TVMaze.Image?
-        var network: Network?
+        var network: TVMaze.Network?
         var genres: [Genre]?
+        var _embedded: TVMaze.Embedded?
         
         init?(json: JSON) {
             guard let name: String = "name" <~~ json,
@@ -35,8 +36,20 @@ extension TVMaze {
             if let thumbPath: String = "image.medium" <~~ json {
                 self.thumbnail = TVMaze.Image(path: thumbPath)
             }
+            self._embedded = "_embedded" <~~ json
         }
         
     }
+
+    struct Embedded: Decodable, ModelType {
+        
+        var cast: [TVMaze.Actor]?
+        
+        init?(json: JSON) {
+            self.cast = "cast" <~~ json
+        }
+        
+    }
+
     
 }
