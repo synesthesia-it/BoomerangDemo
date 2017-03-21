@@ -32,6 +32,8 @@ class DetailsViewController : UIViewController, ViewModelBindable, UICollectionV
         self.viewModel = viewModel
         self.collectionView.bindTo(viewModel:viewModel)
         self.collectionView.delegate = self
+        self.flow?.sectionHeadersPinToVisibleBounds = true
+        self.flow?.sectionFootersPinToVisibleBounds = true
         viewModel.selection.elements.subscribe(onNext:{ selection in
             switch selection {
             case .viewModel(let viewModel):
@@ -44,16 +46,28 @@ class DetailsViewController : UIViewController, ViewModelBindable, UICollectionV
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets.zero
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return collectionView.autosizeItemAt(indexPath: indexPath, itemsPerLine: 1)
+        return collectionView.autosizeItemAt(indexPath: indexPath, itemsPerLine: self.viewModel?.itemsPerLine(atIndexPath: indexPath) ?? 1)
     }
+    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.viewModel?.selection.execute(.item(indexPath))
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        if self.viewModel?.hasHeader(inSection:section) == true {
+                return CGSize(width: 199, height: 60)
+        }
+        return .zero
+    }
+    
 }

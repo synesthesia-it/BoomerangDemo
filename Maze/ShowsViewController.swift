@@ -24,7 +24,7 @@ class ShowsViewController : UIViewController, ViewModelBindable, ViewControllerA
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = "TV Shows"
+        title = "TV Shows"
     }
     
     func bindTo(viewModel: ViewModelType?) {
@@ -42,12 +42,6 @@ class ShowsViewController : UIViewController, ViewModelBindable, ViewControllerA
         }).addDisposableTo(self.disposeBag)
         
         viewModel.reload()
-        
-//        LocationManager.locationUpdates
-//            .take(10)
-//            .takeUntil(viewModel.selection.elements)
-//            .subscribe(onNext: { _ in print("!") })
-//            .addDisposableTo(self.disposeBag)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
@@ -69,6 +63,5 @@ class ShowsViewController : UIViewController, ViewModelBindable, ViewControllerA
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self.viewModel?.selection.execute(.item(indexPath))
     }
-
     
 }

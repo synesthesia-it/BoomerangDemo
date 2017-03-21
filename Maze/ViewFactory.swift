@@ -39,7 +39,12 @@ enum Cell: String, ListIdentifier {
     }
     
     var name: String { return self.rawValue }
-    var type: String? { return nil }
+    var type: String? {
+        switch self {
+        case .genre : return UICollectionElementKindSectionHeader
+        default : return nil
+        }
+    }
 }
 
 enum View: String {

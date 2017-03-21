@@ -17,10 +17,12 @@ extension TVMaze {
         
         let id: Int
         let name: String
+        let summary: String
         let status: String?
         var thumbnail: TVMaze.Image?
         var network: TVMaze.Network?
         var genres: [Genre]?
+        var actors:[TVMaze.Actor]?
         var _embedded: TVMaze.Embedded?
         
         init?(json: JSON) {
@@ -30,6 +32,7 @@ extension TVMaze {
             
             self.id = id
             self.name = name
+            self.summary = ("summary" <~~ json) ?? ""
             self.status = "status" <~~ json
             self.network = "network" <~~ json
             self.genres = "genres" <~~ json
@@ -37,6 +40,7 @@ extension TVMaze {
                 self.thumbnail = TVMaze.Image(path: thumbPath)
             }
             self._embedded = "_embedded" <~~ json
+            self.actors = "_embedded.cast" <~~ json
         }
         
     }

@@ -42,7 +42,7 @@ struct TVMaze {
     }
     
     static func getShow(id showId: Int) -> Observable<TVMaze.Show> {
-        return self.provider.request(.castOfShow(id: showId))
+        return self.provider.request(.getShow(id: showId))
             .mapObject(type: TVMaze.Show.self)
     }
     
