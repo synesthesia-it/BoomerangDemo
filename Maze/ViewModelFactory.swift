@@ -16,6 +16,11 @@ struct ViewModelFactory {
         return DetailItemViewModel(model: model)
     }
     
+    
+    static func showDescriptionItemViewModel(withModel model: TVMaze.Show) -> ItemViewModelType {
+        return DescriptionItemViewModel(model: model)
+    }
+    
     static func showsViewModel() -> ViewModelType {
         return ShowsViewModel()
     }

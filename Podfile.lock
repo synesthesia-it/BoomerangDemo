@@ -6,6 +6,7 @@ PODS:
   - Alamofire (4.4.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
+  - BonMot (4.2)
   - Boomerang (0.9):
     - Action (~> 2.1)
     - RxSwift (~> 3.0)
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - Action (from `https://github.com/RxSwiftCommunity/Action.git`)
   - ActiveLabel
   - AlamofireImage (~> 3.1)
+  - BonMot
   - Boomerang (from `https://github.com/synesthesia-it/Boomerang.git`)
   - Crashlytics
   - DateToolsSwift
@@ -78,6 +80,7 @@ SPEC CHECKSUMS:
   ActiveLabel: 68625f22775f51c31bb691ca8de20f1e5a3bc825
   Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
+  BonMot: 9dbd59135974d2fa591a2084b3489bdc0e15e8f8
   Boomerang: e319bea3abd70f470f5bb59df420945e233bd6ea
   Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
   DateToolsSwift: bf69bf9056d9e53c5c03f06e51f219b9b8b02f9e
@@ -96,6 +99,6 @@ SPEC CHECKSUMS:
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SpinKit: 65906a8b534a4e14cbfd3f8b0b6c329131faef4a
 
-PODFILE CHECKSUM: 65857eb7fab99b392c07417dbe48faeeee34d0b8
+PODFILE CHECKSUM: b18aa7fc6c08983cd36eeb83280d5aa455b0e48a
 
 COCOAPODS: 1.2.0

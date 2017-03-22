@@ -26,10 +26,12 @@ enum Cell: String, ListIdentifier {
     case showItem = "ShowItemCollectionViewCell"
     case actorItem = "ShowActorItemCollectionViewCell"
     case genre = "GenreItemCollectionViewCell"
+    case summary = "DescriptionItemCollectionViewCell"
     static func all() -> [Cell] {
         return [
             .showItem,
             .actorItem,
+            .summary,
             .genre
         ]
     }

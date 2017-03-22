@@ -18,7 +18,7 @@ def shared_pods
     pod 'Action', :git => "https://github.com/RxSwiftCommunity/Action.git"
     # po
     pod 'MZFormSheetPresentationController'
-    
+    pod 'BonMot' 
     pod 'Moya-Gloss/RxSwift'
     
     pod 'AlamofireImage', '~> 3.1'

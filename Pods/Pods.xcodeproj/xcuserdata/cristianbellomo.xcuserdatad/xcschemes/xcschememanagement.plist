@@ -24,6 +24,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>BonMot.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Boomerang.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -107,11 +112,6 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1E81BD8A070205C0294351A8723E9E13</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>26B6B95035B13BD07BCFA149608DB940</key>
 		<dict>
 			<key>primary</key>
@@ -123,11 +123,6 @@
 			<true/>
 		</dict>
 		<key>2CAEADA706698A8380DDBB6C7FCCF0A7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>35DFCB6F9902C9F60E2FAC463E685C9F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -147,11 +142,6 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>4271BC140BAE95BF5AC961E1DBD0775A</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
 		<key>4F3B0C019AF9BECC0CACBEAC8744E831</key>
 		<dict>
 			<key>primary</key>
@@ -162,12 +152,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>5605A2B53E09627F816CA98CD40DF7AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>70D462634F7BD6635A7C8AC01780C67F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>758A3988F55F79C75924A4A28016593D</key>
+		<key>85131B71BF4B7E50DEB922E8F543878C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -188,6 +183,21 @@
 			<true/>
 		</dict>
 		<key>BD4F9A69F0D59047E77BBBAD352062E9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD5404EE1D5188787AB219CE230924D9</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DD11181B78D2E76C99F50613F0518AE7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>E4E44907C59C304B523401838CDF3670</key>
 		<dict>
 			<key>primary</key>
 			<true/>
