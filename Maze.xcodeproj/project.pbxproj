@@ -120,25 +120,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		130059D71E7BE2C30055793B /* ShowList */ = {
-			isa = PBXGroup;
-			children = (
-				133E19031E7989BC00FE0EEE /* ShowItemCollectionViewCell.swift */,
-				133E19041E7989BC00FE0EEE /* ShowItemCollectionViewCell.xib */,
-				133E19051E7989BC00FE0EEE /* ShowItemViewModel.swift */,
-				133E19061E7989BC00FE0EEE /* ShowsViewController.swift */,
-				133E19071E7989BC00FE0EEE /* ShowsViewModel.swift */,
-			);
-			name = ShowList;
-			sourceTree = "<group>";
-		};
 		130059E21E7BE34F0055793B /* Genre */ = {
 			isa = PBXGroup;
 			children = (
 				130059D81E7BE34A0055793B /* GenreItemCollectionViewCell.swift */,
 				130059D91E7BE34A0055793B /* GenreItemCollectionViewCell.xib */,
 				130059DA1E7BE34A0055793B /* GenreItemViewModel.swift */,
-				130059DB1E7BE34A0055793B /* GenresViewController.swift */,
 				130059DC1E7BE34A0055793B /* GenresViewModel.swift */,
 			);
 			name = Genre;
@@ -150,7 +137,6 @@
 				135B3D011E8120C900662577 /* DetailItemCollectionViewCell.swift */,
 				135B3D021E8120C900662577 /* DetailItemCollectionViewCell.xib */,
 				135B3D031E8120C900662577 /* DetailItemViewModel.swift */,
-				135B3D041E8120C900662577 /* DetailsViewController.swift */,
 				135B3D051E8120C900662577 /* DetailsViewModel.swift */,
 			);
 			name = ShowDetail;
@@ -162,7 +148,6 @@
 				130059F81E7C27B90055793B /* ShowActorItemCollectionViewCell.swift */,
 				130059F91E7C27B90055793B /* ShowActorItemCollectionViewCell.xib */,
 				130059FA1E7C27B90055793B /* ShowActorItemViewModel.swift */,
-				130059FB1E7C27B90055793B /* ShowActorsViewController.swift */,
 				130059FC1E7C27B90055793B /* ShowActorsViewModel.swift */,
 			);
 			name = ShowActor;
@@ -171,6 +156,10 @@
 		132C60121E826DB60041D85E /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				130059E21E7BE34F0055793B /* Genre */,
+				13005A021E7C27BC0055793B /* ShowActor */,
+				130059F11E7C1CD30055793B /* ShowDetail */,
+				132C601C1E828BC50041D85E /* ShowList */,
 				132C60131E826DC30041D85E /* Description */,
 			);
 			name = Views;
@@ -184,6 +173,17 @@
 				132C60161E826DD50041D85E /* DescriptionItemViewModel.swift */,
 			);
 			name = Description;
+			sourceTree = "<group>";
+		};
+		132C601C1E828BC50041D85E /* ShowList */ = {
+			isa = PBXGroup;
+			children = (
+				133E19031E7989BC00FE0EEE /* ShowItemCollectionViewCell.swift */,
+				133E19041E7989BC00FE0EEE /* ShowItemCollectionViewCell.xib */,
+				133E19051E7989BC00FE0EEE /* ShowItemViewModel.swift */,
+				133E19071E7989BC00FE0EEE /* ShowsViewModel.swift */,
+			);
+			name = ShowList;
 			sourceTree = "<group>";
 		};
 		133E18C11E79811700FE0EEE = {
@@ -217,8 +217,8 @@
 				133E18D41E79811700FE0EEE /* Factory */,
 				133E18D91E79811700FE0EEE /* Router */,
 				133E18DE1E79811700FE0EEE /* Utilities */,
-				132C60121E826DB60041D85E /* Views */,
 				133E18EA1E79811700FE0EEE /* ViewControllers */,
+				132C60121E826DB60041D85E /* Views */,
 			);
 			path = Maze;
 			sourceTree = "<group>";
@@ -265,10 +265,10 @@
 			isa = PBXGroup;
 			children = (
 				133E18EB1E79811700FE0EEE /* ViewControllerCommons.swift */,
-				13005A021E7C27BC0055793B /* ShowActor */,
-				130059F11E7C1CD30055793B /* ShowDetail */,
-				130059D71E7BE2C30055793B /* ShowList */,
-				130059E21E7BE34F0055793B /* Genre */,
+				133E19061E7989BC00FE0EEE /* ShowsViewController.swift */,
+				130059DB1E7BE34A0055793B /* GenresViewController.swift */,
+				130059FB1E7C27B90055793B /* ShowActorsViewController.swift */,
+				135B3D041E8120C900662577 /* DetailsViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";

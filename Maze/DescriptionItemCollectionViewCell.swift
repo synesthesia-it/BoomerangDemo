@@ -26,6 +26,6 @@ class DescriptionItemCollectionViewCell: UICollectionViewCell, ViewModelBindable
             return
         }
         self.viewModel = viewModel
-        self.summary.styledText = viewModel.string
+        self.summary.styledText = viewModel.string?.replacingOccurrences(of: "\n", with: "")
     }
 }

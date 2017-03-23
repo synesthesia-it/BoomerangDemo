@@ -13,6 +13,7 @@ import SafariServices
 import MediaPlayer
 import AVKit
 import RxSwift
+import Hero
 
 @available(iOS 9.0, *)
 extension SFSafariViewController {
@@ -23,7 +24,10 @@ extension SFSafariViewController {
 
 internal extension UIViewController {
     func withNavigation() -> NavigationController {
-        return NavigationController(rootViewController: self)
+        let nav = NavigationController(rootViewController: self)
+        nav.isHeroEnabled = true
+        nav.heroNavigationAnimationType = .fade
+        return nav
     }
 }
 
@@ -101,11 +105,8 @@ struct Router : RouterType {
     }
     
     public static func root() -> UIViewController {
-        
         let source:ShowsViewController = (Storyboard.main.scene(.showList) as ShowsViewController)
             .withViewModel(ViewModelFactory.showsViewModel())
-       
-        
         return source.withNavigation()
     }
     

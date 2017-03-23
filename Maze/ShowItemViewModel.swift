@@ -15,6 +15,7 @@ final class ShowItemViewModel: ItemViewModelType {
     var model: ItemViewModelType.Model
     var itemIdentifier: ListIdentifier = Cell.showItem
     
+    var id: Int?
     var itemTitle: String?
     var imageUrl: String?
     var image: ObservableImage?
@@ -25,6 +26,7 @@ final class ShowItemViewModel: ItemViewModelType {
     
     init(model: TVMaze.Show) {
         self.model = model
+        id = model.id
         itemTitle = model.name
         image = model.thumbnail?.get().shareReplay(1)
         networkName = model.network?.name

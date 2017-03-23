@@ -56,8 +56,8 @@ final class DetailsViewModel : ListViewModelType, ViewModelTypeSelectable, ListV
     }
     
     init(of show: TVMaze.Show) {
-        let show = TVMaze.getShow(id: show.id).map { show -> ModelStructure in
-            let s1 = ModelStructure([ ViewModelFactory.showItemViewModel(withModel: show), ViewModelFactory.showDescriptionItemViewModel(withModel: show)])
+        let show = Observable.just(show).map { show -> ModelStructure in
+            let s1 = ModelStructure([ ViewModelFactory.showItemViewModel(withModel: show)/*, ViewModelFactory.showDescriptionItemViewModel(withModel: show)*/])
             let s2 = ModelStructure([])
             let s3 = ModelStructure(show.genres ?? [ModelType](), sectionModel: "Genres")
             let s4 = ModelStructure(show.actors ?? [ModelType](), sectionModel: "Actors")

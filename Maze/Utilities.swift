@@ -32,6 +32,7 @@ extension Observable where Element: OptionalType {
 private struct AssociatedKeys {
     static var disposeBag = "disposeBag"
 }
+
 extension UICollectionViewCell {
 
     public var disposeBag: DisposeBag {
@@ -51,4 +52,5 @@ extension UICollectionViewCell {
             objc_setAssociatedObject(self, &AssociatedKeys.disposeBag, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         }
     }
+    
 }

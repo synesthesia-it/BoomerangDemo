@@ -36,7 +36,10 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable {
             guard let model = (self.model(atIndex: indexPath) as? TVMaze.Show) else {
                 return .empty()
             }
-            return Observable<ShowSelectionOutput>.just(.viewModel(ViewModelFactory.showDetailViewModel(of: model)))
+            //return Observable<ShowSelectionOutput>
+            return TVMaze.getShow(id: model.id).flatMapLatest { model in
+                return Observable<ShowSelectionOutput>.just(.viewModel(ViewModelFactory.showDetailViewModel(of: model)))
+            }
         }
     }
     

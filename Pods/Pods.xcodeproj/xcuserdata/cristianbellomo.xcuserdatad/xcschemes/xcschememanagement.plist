@@ -44,6 +44,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Hero.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Localize-Swift.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -112,6 +117,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>06E7D7877DF201365146F6E9E6774EE4</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>26B6B95035B13BD07BCFA149608DB940</key>
 		<dict>
 			<key>primary</key>
@@ -132,12 +142,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>3CC6059BDF0682C145EEEBB60F0AF17C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>40E7477AD67135868F5FB08136602674</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>41FA54D12162DAD51D02FC58A2CD5034</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4A3E211676B243619B026D147D272253</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -152,7 +172,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5605A2B53E09627F816CA98CD40DF7AE</key>
+		<key>701758B9980EFB2C8F0A28F0E010FA79</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -182,22 +202,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>A78F932C4788326A7BC7DCB346063C37</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BD4F9A69F0D59047E77BBBAD352062E9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>BD5404EE1D5188787AB219CE230924D9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>DD11181B78D2E76C99F50613F0518AE7</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>E4E44907C59C304B523401838CDF3670</key>
 		<dict>
 			<key>primary</key>
 			<true/>

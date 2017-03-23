@@ -21,17 +21,28 @@ class DetailsViewController : UIViewController, ViewModelBindable, UICollectionV
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.isHeroEnabled = true
         
+        self.collectionView.heroModifiers = [.cascade(delta: 0.2, direction: .topToBottom, delayMatchedViews: false)]
+        self.view.backgroundColor = UIColor.white
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.collectionView.reloadData()
+    }
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.heroModifiers = [.fade,.cornerRadius(100)]
+    }
     func bindTo(viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? DetailsViewModel else {
             return
         }
         
+        
         self.viewModel = viewModel
         self.collectionView.bindTo(viewModel:viewModel)
         self.collectionView.delegate = self
+        self.collectionView.contentInset = UIEdgeInsetsMake(40, 20, 40, 20)
         self.flow?.sectionHeadersPinToVisibleBounds = true
         self.flow?.sectionFootersPinToVisibleBounds = true
         viewModel.selection.elements.subscribe(onNext:{ selection in

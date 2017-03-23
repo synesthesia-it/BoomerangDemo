@@ -8,16 +8,22 @@
 
 import Foundation
 import BonMot
+
 enum Styles: String {
     case summary
-    var value:String {
+    
+    var value: String {
         return self.rawValue
     }
+    
     static func setup() {
-        NamedStyles.shared.registerStyle(forName: Styles.summary.value, style: StringStyle(.color(.black), .font(.boldSystemFont(ofSize: 14)), .xmlRules([
+        NamedStyles.shared.registerStyle(forName: Styles.summary.value, style: StringStyle(
+            .color(.black),
+            .font(.boldSystemFont(ofSize: 14)), .xmlRules([
                 .style("p", StringStyle(.color(.black))),
                 .style("strong", StringStyle(.color(.red)))
-            ])))
+            ])
+        ))
     }
     
 }

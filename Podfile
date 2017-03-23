@@ -20,7 +20,7 @@ def shared_pods
     pod 'MZFormSheetPresentationController'
     pod 'BonMot' 
     pod 'Moya-Gloss/RxSwift'
-    
+    pod 'Hero'
     pod 'AlamofireImage', '~> 3.1'
 end
 

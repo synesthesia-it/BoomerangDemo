@@ -24,14 +24,19 @@ class ShowsViewController : UIViewController, ViewModelBindable, ViewControllerA
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.isHeroEnabled = true
         title = "TV Shows"
+        
+        self.collectionView.heroModifiers = [.fade, .cascade]
     }
-    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        cell.heroModifiers = [.fade,.zPosition(-100)]
+    }
     func bindTo(viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? ShowsViewModel else { return }
         
         self.viewModel = viewModel
-        self.collectionView.bindTo(viewModel:viewModel)
+        self.collectionView.bindTo(viewModel: viewModel)
         self.collectionView.delegate = self
         self.bindTo(action: viewModel.selection).addDisposableTo(self.disposeBag)
         viewModel.selection.elements.subscribe(onNext: { selection in
@@ -41,6 +46,10 @@ class ShowsViewController : UIViewController, ViewModelBindable, ViewControllerA
             }
         }).addDisposableTo(self.disposeBag)
         
+        let refresh = UIRefreshControl()
+        refresh.rx.bindTo(action: viewModel.dataHolder.reloadAction,controlEvent:refresh.rx.controlEvent(.allEvents), inputTransform: { _ in return nil })
+        viewModel.dataHolder.reloadAction.elements.subscribe(onNext: { _ in refresh.endRefreshing() }).addDisposableTo(self.disposeBag)
+        self.collectionView.addSubview(refresh)
         viewModel.reload()
     }
     
