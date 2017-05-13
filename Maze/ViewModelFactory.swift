@@ -8,8 +8,13 @@ typealias Selection = Action<SelectionInput, SelectionOutput>
 
 struct ViewModelFactory {
     
-    static func showDetailViewModel(of show: TVMaze.Show) -> ViewModelType {
-        return DetailsViewModel(of: show)
+    static func showDetailViewModel(of model: ModelType) -> ViewModelType? {
+        switch model {
+        case is TVMaze.Show :
+            return DetailsViewModel(of: model as! TVMaze.Show)
+        
+        default : return nil
+        }
     }
     
     static func showDetailItemViewModel(withModel model: TVMaze.Show) -> ItemViewModelType {

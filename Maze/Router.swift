@@ -33,7 +33,7 @@ internal extension UIViewController {
 
  extension ViewModelBindable where Self : UIViewController {
     func withViewModel<T:ViewModelBindableType>(_ viewModel:ViewModelType) -> T {
-        self.bindTo(viewModel:viewModel, afterLoad: true)
+        self.bind(to:viewModel, afterLoad: true)
         return self as! T
     }
 }
@@ -77,15 +77,15 @@ struct Router : RouterType {
         switch viewModel {
         case is ShowActorsViewModel:
             let destination: ShowActorsViewController = Storyboard.main.scene(.actors)
-            destination.bindTo(viewModel: viewModel, afterLoad: true)
+            destination.bind(to: viewModel, afterLoad: true)
             return UIViewControllerRouterAction.push(source: source, destination: destination)
         case is DetailsViewModel:
             let destination: DetailsViewController = Storyboard.main.scene(.showDetail)
-            destination.bindTo(viewModel: viewModel, afterLoad: true)
+            destination.bind(to: viewModel, afterLoad: true)
             return UIViewControllerRouterAction.push(source: source, destination: destination)
         case is GenresViewModel:
             let destination: GenresViewController = Storyboard.main.scene(.genres)
-            destination.bindTo(viewModel: viewModel, afterLoad: true)
+            destination.bind(to: viewModel, afterLoad: true)
             return UIViewControllerRouterAction.push(source: source, destination: destination)
         default:
             return EmptyRouterAction()

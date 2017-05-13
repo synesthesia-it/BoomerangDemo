@@ -25,13 +25,13 @@ class ShowActorsViewController : UIViewController, ViewModelBindable, UICollecti
         title = "Actors"
     }
     
-    func bindTo(viewModel: ViewModelType?) {
+    func bind(to viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? ShowActorsViewModel else {
             return
         }
         
         self.viewModel = viewModel
-        self.collectionView.bindTo(viewModel:viewModel)
+        self.collectionView.bind(to:viewModel)
         self.collectionView.delegate = self
         viewModel.selection.elements.subscribe(onNext:{ selection in
             switch selection {

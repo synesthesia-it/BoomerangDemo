@@ -24,13 +24,13 @@ class GenresViewController : UIViewController, ViewModelBindable, UICollectionVi
         title = "Genres"
     }
     
-    func bindTo(viewModel: ViewModelType?) {
+    func bind(to viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? GenresViewModel else {
             return
         }
         
         self.viewModel = viewModel
-        self.collectionView.bindTo(viewModel:viewModel)
+        self.collectionView.bind(to:viewModel)
         self.collectionView.delegate = self
         viewModel.selection.elements.subscribe(onNext:{ selection in
             switch selection {

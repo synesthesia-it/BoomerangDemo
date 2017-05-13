@@ -19,10 +19,10 @@ enum DetailSelectionOutput : SelectionOutput {
     case viewModel(ViewModelType)
 }
 
-final class DetailsViewModel : ListViewModelType, ViewModelTypeSelectable, ListViewModelTypeHeaderable {
+final class DetailsViewModel : ListViewModelType, ViewModelTypeSelectable, ListViewModelTypeSectionable {
     
     var dataHolder: ListDataHolderType = ListDataHolder()
-    var headerIdentifiers: [ListIdentifier] {
+    var sectionIdentifiers: [ListIdentifier] {
         return [Cell.genre]
     }
     
@@ -39,11 +39,13 @@ final class DetailsViewModel : ListViewModelType, ViewModelTypeSelectable, ListV
     lazy var selection:Action<DetailSelectionInput,DetailSelectionOutput> = Action { input in
         switch input {
         case .item(let indexPath):
-            guard let model = (self.model(atIndex: indexPath) as? TVMaze.Show) else {
+            guard let model = self.model(atIndex: indexPath)  else {
                 return .empty()
             }
-            let destinationViewModel = ViewModelFactory.showDetailViewModel(of: model)
-            return .just(.viewModel(destinationViewModel))
+            if let destinationViewModel = ViewModelFactory.showDetailViewModel(of: model) {
+                return .just(.viewModel(destinationViewModel))
+            }
+            return .empty()
         }
     }
     

@@ -25,7 +25,7 @@ class ShowItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
         // Initialization code
     }
     
-    func bindTo(viewModel: ViewModelType?) {
+    func bind(to viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? ShowItemViewModel else { return }
         self.viewModel = viewModel
         self.title.text = viewModel.itemTitle

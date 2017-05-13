@@ -21,7 +21,7 @@ class DetailItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
         // Initialization code
     }
     
-    func bindTo(viewModel: ViewModelType?) {
+    func bind(to viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? DetailItemViewModel else {
             return
         }

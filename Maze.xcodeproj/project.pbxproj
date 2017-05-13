@@ -33,7 +33,7 @@
 		133E18E41E79811700FE0EEE /* SeparatorLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E18E31E79811700FE0EEE /* SeparatorLayout.swift */; };
 		133E18E71E79811700FE0EEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133E18E51E79811700FE0EEE /* Main.storyboard */; };
 		133E18E91E79811700FE0EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 133E18E81E79811700FE0EEE /* Assets.xcassets */; };
-		133E18EC1E79811700FE0EEE /* ViewControllerCommons.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E18EB1E79811700FE0EEE /* ViewControllerCommons.swift */; };
+		133E18EC1E79811700FE0EEE /* ViewController+Shared.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E18EB1E79811700FE0EEE /* ViewController+Shared.swift */; };
 		133E18EF1E79811700FE0EEE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 133E18ED1E79811700FE0EEE /* LaunchScreen.storyboard */; };
 		133E18F71E79822600FE0EEE /* TVMaze.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E18F61E79822600FE0EEE /* TVMaze.swift */; };
 		133E19081E7989BC00FE0EEE /* ShowItemCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 133E19031E7989BC00FE0EEE /* ShowItemCollectionViewCell.swift */; };
@@ -84,7 +84,7 @@
 		133E18E31E79811700FE0EEE /* SeparatorLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeparatorLayout.swift; sourceTree = "<group>"; };
 		133E18E61E79811700FE0EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		133E18E81E79811700FE0EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		133E18EB1E79811700FE0EEE /* ViewControllerCommons.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerCommons.swift; sourceTree = "<group>"; };
+		133E18EB1E79811700FE0EEE /* ViewController+Shared.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Shared.swift"; sourceTree = "<group>"; };
 		133E18EE1E79811700FE0EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		133E18F01E79811700FE0EEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		133E18F61E79822600FE0EEE /* TVMaze.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMaze.swift; sourceTree = "<group>"; };
@@ -126,7 +126,6 @@
 				130059D81E7BE34A0055793B /* GenreItemCollectionViewCell.swift */,
 				130059D91E7BE34A0055793B /* GenreItemCollectionViewCell.xib */,
 				130059DA1E7BE34A0055793B /* GenreItemViewModel.swift */,
-				130059DC1E7BE34A0055793B /* GenresViewModel.swift */,
 			);
 			name = Genre;
 			sourceTree = "<group>";
@@ -137,7 +136,6 @@
 				135B3D011E8120C900662577 /* DetailItemCollectionViewCell.swift */,
 				135B3D021E8120C900662577 /* DetailItemCollectionViewCell.xib */,
 				135B3D031E8120C900662577 /* DetailItemViewModel.swift */,
-				135B3D051E8120C900662577 /* DetailsViewModel.swift */,
 			);
 			name = ShowDetail;
 			sourceTree = "<group>";
@@ -148,7 +146,6 @@
 				130059F81E7C27B90055793B /* ShowActorItemCollectionViewCell.swift */,
 				130059F91E7C27B90055793B /* ShowActorItemCollectionViewCell.xib */,
 				130059FA1E7C27B90055793B /* ShowActorItemViewModel.swift */,
-				130059FC1E7C27B90055793B /* ShowActorsViewModel.swift */,
 			);
 			name = ShowActor;
 			sourceTree = "<group>";
@@ -181,7 +178,6 @@
 				133E19031E7989BC00FE0EEE /* ShowItemCollectionViewCell.swift */,
 				133E19041E7989BC00FE0EEE /* ShowItemCollectionViewCell.xib */,
 				133E19051E7989BC00FE0EEE /* ShowItemViewModel.swift */,
-				133E19071E7989BC00FE0EEE /* ShowsViewModel.swift */,
 			);
 			name = ShowList;
 			sourceTree = "<group>";
@@ -264,11 +260,11 @@
 		133E18EA1E79811700FE0EEE /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				133E18EB1E79811700FE0EEE /* ViewControllerCommons.swift */,
-				133E19061E7989BC00FE0EEE /* ShowsViewController.swift */,
-				130059DB1E7BE34A0055793B /* GenresViewController.swift */,
-				130059FB1E7C27B90055793B /* ShowActorsViewController.swift */,
-				135B3D041E8120C900662577 /* DetailsViewController.swift */,
+				133E18EB1E79811700FE0EEE /* ViewController+Shared.swift */,
+				7B7020A01EC6EA2500A01096 /* Shows */,
+				7B70209D1EC6EA0000A01096 /* Genres */,
+				7B70209E1EC6EA0A00A01096 /* Actors */,
+				7B70209F1EC6EA1B00A01096 /* Details */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -301,6 +297,42 @@
 				E7DC635CFF147C1D1E8960B1 /* Pods_Maze.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B70209D1EC6EA0000A01096 /* Genres */ = {
+			isa = PBXGroup;
+			children = (
+				130059DB1E7BE34A0055793B /* GenresViewController.swift */,
+				130059DC1E7BE34A0055793B /* GenresViewModel.swift */,
+			);
+			name = Genres;
+			sourceTree = "<group>";
+		};
+		7B70209E1EC6EA0A00A01096 /* Actors */ = {
+			isa = PBXGroup;
+			children = (
+				130059FB1E7C27B90055793B /* ShowActorsViewController.swift */,
+				130059FC1E7C27B90055793B /* ShowActorsViewModel.swift */,
+			);
+			name = Actors;
+			sourceTree = "<group>";
+		};
+		7B70209F1EC6EA1B00A01096 /* Details */ = {
+			isa = PBXGroup;
+			children = (
+				135B3D041E8120C900662577 /* DetailsViewController.swift */,
+				135B3D051E8120C900662577 /* DetailsViewModel.swift */,
+			);
+			name = Details;
+			sourceTree = "<group>";
+		};
+		7B7020A01EC6EA2500A01096 /* Shows */ = {
+			isa = PBXGroup;
+			children = (
+				133E19061E7989BC00FE0EEE /* ShowsViewController.swift */,
+				133E19071E7989BC00FE0EEE /* ShowsViewModel.swift */,
+			);
+			name = Shows;
 			sourceTree = "<group>";
 		};
 		EE7B5F552E19C5257268F7D1 /* Pods */ = {
@@ -450,7 +482,7 @@
 				133E18D61E79811700FE0EEE /* ViewModelFactory.swift in Sources */,
 				130059E01E7BE34A0055793B /* GenresViewController.swift in Sources */,
 				133E190A1E7989BC00FE0EEE /* ShowItemViewModel.swift in Sources */,
-				133E18EC1E79811700FE0EEE /* ViewControllerCommons.swift in Sources */,
+				133E18EC1E79811700FE0EEE /* ViewController+Shared.swift in Sources */,
 				133E18E21E79811700FE0EEE /* Operators.swift in Sources */,
 				13005A001E7C27B90055793B /* ShowActorsViewController.swift in Sources */,
 				135B3D0A1E8120C900662577 /* DetailsViewModel.swift in Sources */,

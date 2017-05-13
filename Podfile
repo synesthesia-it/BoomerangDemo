@@ -5,7 +5,7 @@ def shared_pods
     
     use_frameworks!
     pod 'RxSwift'
-    pod 'Boomerang', :git => "https://github.com/synesthesia-it/Boomerang.git"
+    pod 'Boomerang', :git => 'https://github.com/synesthesia-it/Boomerang.git', :branch => 'v1'
     pod 'pop'
     pod 'MBProgressHUD'
     pod 'SpinKit'
@@ -15,8 +15,7 @@ def shared_pods
     pod 'ActiveLabel'
     pod 'Localize-Swift'
     pod 'DateToolsSwift’
-    pod 'Action', :git => "https://github.com/RxSwiftCommunity/Action.git"
-    # po
+    pod 'Action', :git => 'https://github.com/RxSwiftCommunity/Action.git'
     pod 'MZFormSheetPresentationController'
     pod 'BonMot' 
     pod 'Moya-Gloss/RxSwift'

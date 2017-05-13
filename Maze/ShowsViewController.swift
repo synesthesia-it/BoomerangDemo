@@ -15,7 +15,7 @@ import Action
 class ShowsViewController : UIViewController, ViewModelBindable, ViewControllerActionBindable,UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    
+    @IBOutlet weak var searchTextField: UITextField!
     var viewModel: ShowsViewModel?
     
     var flow:UICollectionViewFlowLayout? {
@@ -27,17 +27,21 @@ class ShowsViewController : UIViewController, ViewModelBindable, ViewControllerA
         self.isHeroEnabled = true
         title = "TV Shows"
         
-        self.collectionView.heroModifiers = [.fade, .cascade]
+        //self.collectionView.heroModifiers = [.fade, .cascade]
     }
-    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        cell.heroModifiers = [.fade,.zPosition(-100)]
-    }
-    func bindTo(viewModel: ViewModelType?) {
+//    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+//        cell.heroModifiers = [.fade,.zPosition(-100)]
+//    }
+    func bind (to viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? ShowsViewModel else { return }
         
         self.viewModel = viewModel
-        self.collectionView.bindTo(viewModel: viewModel)
+        self.collectionView.bind(to: viewModel)
         self.collectionView.delegate = self
+        
+        //TWO WAY DATA BINDING 
+        (self.searchTextField.rx.textInput <-> viewModel.query).addDisposableTo(self.disposeBag)
+        
         self.bindTo(action: viewModel.selection).addDisposableTo(self.disposeBag)
         viewModel.selection.elements.subscribe(onNext: { selection in
             switch selection {
@@ -47,7 +51,7 @@ class ShowsViewController : UIViewController, ViewModelBindable, ViewControllerA
         }).addDisposableTo(self.disposeBag)
         
         let refresh = UIRefreshControl()
-        refresh.rx.bindTo(action: viewModel.dataHolder.reloadAction,controlEvent:refresh.rx.controlEvent(.allEvents), inputTransform: { _ in return nil })
+        refresh.rx.bind(to: viewModel.dataHolder.reloadAction,controlEvent:refresh.rx.controlEvent(.allEvents), inputTransform: { _ in return nil })
         viewModel.dataHolder.reloadAction.elements.subscribe(onNext: { _ in refresh.endRefreshing() }).addDisposableTo(self.disposeBag)
         self.collectionView.addSubview(refresh)
         viewModel.reload()
@@ -62,7 +66,7 @@ class ShowsViewController : UIViewController, ViewModelBindable, ViewControllerA
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets(top: 20, left: 10, bottom: 20, right: 10)
+        return UIEdgeInsets(top: 60, left: 10, bottom: 20, right: 10)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {

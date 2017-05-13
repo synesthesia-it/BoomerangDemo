@@ -23,7 +23,7 @@ class DetailsViewController : UIViewController, ViewModelBindable, UICollectionV
         super.viewDidLoad()
         self.isHeroEnabled = true
         
-        self.collectionView.heroModifiers = [.cascade(delta: 0.2, direction: .topToBottom, delayMatchedViews: false)]
+       // self.collectionView.heroModifiers = [.cascade(delta: 0.2, direction: .topToBottom, delayMatchedViews: false)]
         self.view.backgroundColor = UIColor.white
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -31,16 +31,16 @@ class DetailsViewController : UIViewController, ViewModelBindable, UICollectionV
         self.collectionView.reloadData()
     }
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
-        cell.heroModifiers = [.fade,.cornerRadius(100)]
+      //  cell.heroModifiers = [.fade,.cornerRadius(100)]
     }
-    func bindTo(viewModel: ViewModelType?) {
+    func bind(to viewModel: ViewModelType?) {
         guard let viewModel = viewModel as? DetailsViewModel else {
             return
         }
         
         
         self.viewModel = viewModel
-        self.collectionView.bindTo(viewModel:viewModel)
+        self.collectionView.bind(to:viewModel)
         self.collectionView.delegate = self
         self.collectionView.contentInset = UIEdgeInsetsMake(40, 20, 40, 20)
         self.flow?.sectionHeadersPinToVisibleBounds = true
