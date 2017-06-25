@@ -22,16 +22,16 @@ final class ScheduleViewModel : ListViewModelType, ViewModelTypeSelectable {
     var dataHolder: ListDataHolderType = ListDataHolder()
     
     func itemViewModel(fromModel model: ModelType) -> ItemViewModelType? {
-        guard let item = model as? Show else {
+        guard let item = model as? Episode else {
             return nil
         }
-        return ViewModelFactory.showItemViewModel(withModel: item)
+        return ViewModelFactory.episodeItemViewModel(withModel: item)
     }
     
     lazy var selection : Action<ScheduleSelectionInput,ScheduleSelectionOutput> = Action { input in
         switch input {
         case .item(let indexPath):
-            guard let model = (self.model(atIndex:indexPath) as? Show) else {
+            guard let model = (self.model(atIndex:indexPath) as? Episode)?.show else {
                 return .empty()
             }
             return TVMaze.getShow(id: model.id).flatMapLatest { model -> Observable<ScheduleSelectionOutput> in
@@ -45,6 +45,6 @@ final class ScheduleViewModel : ListViewModelType, ViewModelTypeSelectable {
     
     
     init() {
-        self.dataHolder = ListDataHolder(data: TVMaze.schedule().map { $0.flatMap { $0.show}}.structured())
+        self.dataHolder = ListDataHolder(data: TVMaze.schedule().map { $0.flatMap { $0}}.structured())
     }
 }

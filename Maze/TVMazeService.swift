@@ -55,7 +55,7 @@ extension Service: TargetType {
         case .searchShows(let query):
             return ["q": query]
         case .getShow:
-            return ["embed": ["episodes", "cast"]]
+            return ["embed": ["episodes", "cast","seasons"]]
         default:
             return nil
         }

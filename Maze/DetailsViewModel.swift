@@ -23,17 +23,20 @@ final class DetailsViewModel : ListViewModelType, ViewModelTypeSelectable, ListV
     
     var dataHolder: ListDataHolderType = ListDataHolder()
     var sectionIdentifiers: [ListIdentifier] {
-        return [Cell.genre]
+        return [Cell.genre, Cell.poster]
     }
     
     func itemViewModel(fromModel model: ModelType) -> ItemViewModelType? {
-        if let genre = model as? Genre {
+        switch model {
+        case let season as Season:
+            return ViewModelFactory.posterItem(for: season.thumbnail)
+        case let genre  as Genre :
             return ViewModelFactory.genreItemViewModel(withModel: genre)
-        }
-        if let actor = model as? Actor {
+        case let actor as Actor :
             return ViewModelFactory.actorItemViewModel(withModel: actor)
-        }
+        default:
         return model as? ItemViewModelType
+        }
     }
     
     lazy var selection:Action<DetailSelectionInput,DetailSelectionOutput> = Action { input in
@@ -50,20 +53,29 @@ final class DetailsViewModel : ListViewModelType, ViewModelTypeSelectable, ListV
     }
     
     func hasHeader(inSection section:Int) -> Bool {
+        if section == 0 { return false }
         return self.dataHolder.modelStructure.value.children?[section].sectionModel != nil
     }
     
     func itemsPerLine(atIndexPath indexPath:IndexPath) -> Int {
-        return indexPath.section == 0 ? 1 : 2
+        //return indexPath.section == 0 ? 1 : 2
+        if model(atIndex: indexPath) is Season {
+            return 5
+        }
+        return 1
     }
-    
+
     init(of show: Show) {
         let show = Observable.just(show).map { show -> ModelStructure in
-            let s1 = ModelStructure([ ViewModelFactory.showItemViewModel(withModel: show)/*, ViewModelFactory.showDescriptionItemViewModel(withModel: show)*/])
-            let s2 = ModelStructure([])
-            let s3 = ModelStructure(show.genres ?? [ModelType](), sectionModel: "Genres")
-            let s4 = ModelStructure(show.actors ?? [ModelType](), sectionModel: "Actors")
-            return ModelStructure(children: [s1, s2, s3, s4])
+            let main = ModelStructure([
+                ViewModelFactory.showTitleItemViewModel(withModel: show),
+                ViewModelFactory.showDescriptionItemViewModel(withModel: show)], sectionModel:ViewModelFactory.posterItem(for:show.poster))
+            
+            
+            let seasons = ModelStructure(["Seasons"] + (show.seasons ?? [ModelType]()))
+            
+            let cast = ModelStructure(["Characters"] + (show.actors ?? [ModelType]()))
+            return ModelStructure(children: [main, seasons, cast])
         }
         self.dataHolder = ListDataHolder(data: show)
     }

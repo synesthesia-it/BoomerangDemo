@@ -15,7 +15,7 @@ def shared_pods
     pod 'ActiveLabel'
     pod 'Localize-Swift'
     pod 'DateToolsSwift’
-    pod 'Action', :git => 'https://github.com/RxSwiftCommunity/Action.git'
+    pod 'Action'
     pod 'MZFormSheetPresentationController'
     pod 'BonMot' 
     pod 'Moya-Gloss/RxSwift'

@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway-Medium.ttf">
+            <string>Raleway-Medium</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,17 +24,17 @@
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JLw-rI-nFH">
-                        <rect key="frame" x="0.0" y="0.0" width="583" height="133"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                        <rect key="frame" x="0.0" y="8" width="583" height="117"/>
+                        <fontDescription key="fontDescription" name="Raleway-Medium" family="Raleway" pointSize="18"/>
+                        <color key="textColor" red="0.27058823529999998" green="0.01176470588" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="JLw-rI-nFH" secondAttribute="trailing" id="DyG-cn-9cF"/>
-                <constraint firstAttribute="bottom" secondItem="JLw-rI-nFH" secondAttribute="bottom" id="dY2-Hs-rfx"/>
-                <constraint firstItem="JLw-rI-nFH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="jVs-9w-baP"/>
+                <constraint firstAttribute="bottom" secondItem="JLw-rI-nFH" secondAttribute="bottom" constant="8" id="dY2-Hs-rfx"/>
+                <constraint firstItem="JLw-rI-nFH" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="8" id="jVs-9w-baP"/>
                 <constraint firstItem="JLw-rI-nFH" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="jz2-eL-M8I"/>
             </constraints>
             <size key="customSize" width="583" height="133"/>

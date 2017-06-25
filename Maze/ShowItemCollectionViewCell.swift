@@ -32,9 +32,9 @@ class ShowItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
         self.subtitle.text = viewModel.description
         self.disposeBag = DisposeBag()
         viewModel.image?
-            .bindTo(self.thumbnail.rx.image)
+            .bind(to:self.thumbnail.rx.image)
             .addDisposableTo(self.disposeBag)
         //SYNImageDownloader.download(from: viewModel.imageUrl).bindTo(imageView.rx.image).addDisposableTo(disposeBag)
-        thumbnail.heroID = "showThumbnail_\(viewModel.id)"
+        thumbnail.heroID = "showThumbnail_\(viewModel.id ?? 0)"
     }
 }

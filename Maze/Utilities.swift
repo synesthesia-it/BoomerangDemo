@@ -54,3 +54,18 @@ extension UICollectionViewCell {
     }
     
 }
+
+
+enum Font {
+    case ralewayRegular(CGFloat)
+    case ralewayBold(CGFloat)
+    
+    var font :UIFont {
+        
+        
+        switch self {
+        case .ralewayRegular(let size) : return UIFont.init(name: "Raleway-Regular", size: size)!
+        case .ralewayBold(let size) : return UIFont.init(name: "Raleway-Bold", size: size)!
+        }
+    }
+}

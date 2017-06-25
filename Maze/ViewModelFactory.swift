@@ -36,6 +36,12 @@ struct ViewModelFactory {
     static func showItemViewModel(withModel model: Show) -> ItemViewModelType {
         return ShowItemViewModel(model: model)
     }
+    static func showTitleItemViewModel(withModel model: Show) -> ItemViewModelType {
+        return ShowTitleItemViewModel(model: model)
+    }
+    static func episodeItemViewModel(withModel model: Episode) -> ItemViewModelType {
+        return EpisodeItemViewModel(model: model)
+    }
     
     static func genresViewModel(forShow show: Show) -> ViewModelType {
         return GenresViewModel(withShow:show)
@@ -52,5 +58,7 @@ struct ViewModelFactory {
     static func actorsViewModel(forShow show: Show) -> ViewModelType {
         return ShowActorsViewModel(withModel: show)
     }
-    
+    static func posterItem(for image:Image?) -> ItemViewModelType {
+        return PosterItemViewModel(model: image ?? Image.empty)
+    }
 }

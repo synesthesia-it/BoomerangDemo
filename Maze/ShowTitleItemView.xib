@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Raleway-Bold.ttf">
+            <string>Raleway-Bold</string>
+        </array>
+        <array key="Raleway-Regular.ttf">
+            <string>Raleway-Regular</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ShowTitleItemView" customModule="Maze" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NhT-lh-win">
+                    <rect key="frame" x="0.0" y="0.0" width="187.5" height="16.5"/>
+                    <fontDescription key="fontDescription" name="Raleway-Regular" family="Raleway" pointSize="14"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PYU-V7-tGi">
+                    <rect key="frame" x="0.0" y="20.5" width="375" height="646.5"/>
+                    <fontDescription key="fontDescription" name="Raleway-Bold" family="Raleway" pointSize="36"/>
+                    <color key="textColor" red="0.27058823529999998" green="0.01176470588" blue="0.4941176471" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="PYU-V7-tGi" secondAttribute="trailing" id="8da-Aj-pAD"/>
+                <constraint firstItem="NhT-lh-win" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="HPN-gp-Pfk"/>
+                <constraint firstItem="NhT-lh-win" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="KaI-ia-4NS"/>
+                <constraint firstItem="PYU-V7-tGi" firstAttribute="leading" secondItem="NhT-lh-win" secondAttribute="leading" id="bCJ-it-YtB"/>
+                <constraint firstItem="PYU-V7-tGi" firstAttribute="top" secondItem="NhT-lh-win" secondAttribute="bottom" constant="4" id="e7D-Ix-74H"/>
+                <constraint firstAttribute="bottom" secondItem="PYU-V7-tGi" secondAttribute="bottom" id="j5A-Fr-ax6"/>
+                <constraint firstItem="PYU-V7-tGi" firstAttribute="centerX" secondItem="NhT-lh-win" secondAttribute="trailing" id="xHU-3w-ZPw"/>
+            </constraints>
+            <connections>
+                <outlet property="lbl_description" destination="NhT-lh-win" id="Ns0-7a-Nfu"/>
+                <outlet property="lbl_title" destination="PYU-V7-tGi" id="7U4-j3-D6B"/>
+            </connections>
+        </view>
+    </objects>
+</document>

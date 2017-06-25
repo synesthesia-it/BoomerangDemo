@@ -23,7 +23,7 @@ final class ShowActorItemViewModel : ItemViewModelType {
         self.model = model
         self.actorName = model.person?.name
         self.characterName = model.character?.name
-        self.actorPhoto = model.person?.mediumImage?.get().shareReplay(1)
+        self.actorPhoto = model.character?.mediumImage?.get().shareReplay(1)
     }
     
 }

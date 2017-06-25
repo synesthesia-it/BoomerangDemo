@@ -22,18 +22,29 @@ enum SceneIdentifier : String, ListIdentifier {
 extension ListViewModelType {
     var listIdentifiers: [ListIdentifier] { return Cell.all() }
 }
-
+enum CellType : String, ListIdentifier {
+    case poster = "poster"
+     var name: String { return self.rawValue }
+    var type: String? { return nil }
+    var isEmbeddable: Bool { return false}
+}
 enum Cell: String, ListIdentifier {
     case showItem = "ShowItemCollectionViewCell"
     case actorItem = "ShowActorItemCollectionViewCell"
     case genre = "GenreItemCollectionViewCell"
     case summary = "DescriptionItemCollectionViewCell"
+    case episode = "EpisodeItemView"
+    case poster = "PosterItemView"
+    case showTitle = "ShowTitleItemView"
     static func all() -> [Cell] {
         return [
             .showItem,
             .actorItem,
             .summary,
-            .genre
+            .genre,
+            .episode,
+            .poster,
+            .showTitle
         ]
     }
     
@@ -42,8 +53,15 @@ enum Cell: String, ListIdentifier {
     }
     
     var name: String { return self.rawValue }
+    var isEmbeddable: Bool {
+        switch self {
+        case .episode, .poster, .showTitle : return true
+        default : return false
+        }
+    }
     var type: String? {
         switch self {
+        case .poster : return CellType.poster.name
         case .genre : return UICollectionElementKindSectionHeader
         default : return nil
         }

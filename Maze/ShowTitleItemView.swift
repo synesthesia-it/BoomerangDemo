@@ -11,22 +11,24 @@ import Boomerang
 import RxSwift
 import Action
 import RxCocoa
-import BonMot
-class DescriptionItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
+
+class ShowTitleItemView: UIView, ViewModelBindable , EmbeddableView{
     
+    @IBOutlet weak var lbl_description: UILabel!
+    @IBOutlet weak var lbl_title: UILabel!
     var viewModel:ItemViewModelType?
-    
-    @IBOutlet weak var summary: UILabel!
+    var disposeBag = DisposeBag()
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
     }
     func bind(to viewModel: ViewModelType?) {
-        guard let viewModel = viewModel as? DescriptionItemViewModel else {
+        self.disposeBag = DisposeBag()
+        guard let viewModel = viewModel as? ShowTitleItemViewModel else {
             return
         }
         self.viewModel = viewModel
-        self.summary.styledText = viewModel.string?.replacingOccurrences(of: "\n", with: "")
-        
+        self.lbl_title.text = viewModel.title
+        self.lbl_description.text = viewModel.description
     }
 }

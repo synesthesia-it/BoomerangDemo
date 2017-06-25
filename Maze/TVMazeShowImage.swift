@@ -9,25 +9,25 @@
 import Foundation
 import Gloss
 import RxSwift
+import Boomerang
 
 
-
-    class Image:  ObservableImageType {
-        
-        let path: String
-
-        init(path: String) {
-            self.path = path
-        }
-        
-        init(url: URL) {
-            self.path = url.absoluteString
-        }
-        
-        func get() -> Observable<UIImage?> {
-            return ImageDownloader.download(from: self.path)
-        }
-        
+class Image:  ObservableImageType, ModelType {
+    static var empty = Image(path: "")
+    let path: String
+    
+    init(path: String) {
+        self.path = path
     }
+    
+    init(url: URL) {
+        self.path = url.absoluteString
+    }
+    
+    func get() -> Observable<UIImage?> {
+        return ImageDownloader.download(from: self.path)
+    }
+    
+}
 
 

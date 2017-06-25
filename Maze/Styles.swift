@@ -19,7 +19,7 @@ enum Styles: String {
     static func setup() {
         NamedStyles.shared.registerStyle(forName: Styles.summary.value, style: StringStyle(
             .color(.black),
-            .font(.boldSystemFont(ofSize: 14)), .xmlRules([
+            .font(Font.ralewayRegular(14).font), .xmlRules([
                 .style("p", StringStyle(.color(.black))),
                 .style("strong", StringStyle(.color(.red)))
             ])

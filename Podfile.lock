@@ -1,9 +1,9 @@
 PODS:
-  - Action (3.0.0):
-    - RxCocoa (~> 3.4.0)
-    - RxSwift (~> 3.4.0)
+  - Action (3.1.1):
+    - RxCocoa (~> 3.4)
+    - RxSwift (~> 3.4)
   - ActiveLabel (0.7.1)
-  - Alamofire (4.4.0)
+  - Alamofire (4.5.0)
   - AlamofireImage (3.2.0):
     - Alamofire (~> 4.1)
   - BonMot (4.3.1)
@@ -18,8 +18,8 @@ PODS:
   - Hero (0.3.6)
   - Localize-Swift (1.7.1)
   - MBProgressHUD (1.0.0)
-  - Moya (8.0.4):
-    - Moya/Core (= 8.0.4)
+  - Moya (8.0.5):
+    - Moya/Core (= 8.0.5)
   - Moya-Gloss/Core (2.0.1):
     - Gloss (~> 1.2)
     - Moya (~> 8.0)
@@ -27,25 +27,25 @@ PODS:
     - Moya-Gloss/Core
     - Moya/RxSwift
     - RxSwift (~> 3.4)
-  - Moya/Core (8.0.4):
+  - Moya/Core (8.0.5):
     - Alamofire (~> 4.1)
     - Result (~> 3.0)
-  - Moya/RxSwift (8.0.4):
+  - Moya/RxSwift (8.0.5):
     - Moya/Core
     - RxSwift (~> 3.0)
   - MZAppearance (1.1.6)
   - MZFormSheetPresentationController (2.4.2):
     - MZAppearance
-  - pop (1.0.9)
-  - Result (3.2.1)
-  - RxCocoa (3.4.1):
+  - pop (1.0.10)
+  - Result (3.2.3)
+  - RxCocoa (3.5.0):
     - RxSwift (~> 3.4)
-  - RxSwift (3.4.1)
+  - RxSwift (3.5.0)
   - SnapKit (3.0.2)
   - SpinKit (1.2.0)
 
 DEPENDENCIES:
-  - Action (from `https://github.com/RxSwiftCommunity/Action.git`)
+  - Action
   - ActiveLabel
   - AlamofireImage (~> 3.1)
   - BonMot
@@ -64,24 +64,19 @@ DEPENDENCIES:
   - SpinKit
 
 EXTERNAL SOURCES:
-  Action:
-    :git: https://github.com/RxSwiftCommunity/Action.git
   Boomerang:
     :branch: v1
     :git: https://github.com/synesthesia-it/Boomerang.git
 
 CHECKOUT OPTIONS:
-  Action:
-    :commit: 0edd8bff0ce99edfe2083791d3651a548e397e65
-    :git: https://github.com/RxSwiftCommunity/Action.git
   Boomerang:
-    :commit: bca249b2d5a340e209b52b7401997e8e12f3fa3b
+    :commit: 4eed336a2e40283913b60527246a7aaaec942bca
     :git: https://github.com/synesthesia-it/Boomerang.git
 
 SPEC CHECKSUMS:
-  Action: fed388b9160ad787a58cb34b5064db6dbaae7e45
+  Action: e224bd151fe2e057f4189b4a9df0dc5d21264a9e
   ActiveLabel: 68625f22775f51c31bb691ca8de20f1e5a3bc825
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   AlamofireImage: 157ed682cc81d3b9db4fb90c1f12180ac552d93b
   BonMot: 043bb5a8834cc6d74e9d624742272b92385e0a27
   Boomerang: eaa3faf38fea21672cc65df2c900dd4d474b4df0
@@ -92,17 +87,17 @@ SPEC CHECKSUMS:
   Hero: d3c6f4dd80cdcdbb339be64e57ae3b5c3ab9938c
   Localize-Swift: 6cabc1087c0e910e77bfa87c2ed3f65c80c0b2df
   MBProgressHUD: 4890f671c94e8a0f3cf959aa731e9de2f036d71a
-  Moya: a08bc060c7a44eee27447b239ed33a189b641e2b
+  Moya: c37eec09a098ba9991b5a963b291fc5704bdb9ef
   Moya-Gloss: 59a96de0673f555e080afb381f8c4f932ae9fb1a
   MZAppearance: 0c06d3fa9cc55142f1da14bc8631fbe8fd6e19d5
   MZFormSheetPresentationController: c1dc3bce639d2393b3cc416fcb6e050eb5bca062
-  pop: f667631a5108a2e60d9e8797c9b32ddaf2080bce
-  Result: 2453a22e5c5b11c0c3a478736e82cd02f763b781
-  RxCocoa: a8a5f1d061d0043e28f56976829f31ce63e8eb09
-  RxSwift: 656f8fbeca5bc372121a72d9ebdd3cd3bc0ffade
+  pop: 82ca6b068ce9278fd350fd9dd09482a0ce9492e6
+  Result: 128640a6347e8d2ae48b142556739a2d13f90ce6
+  RxCocoa: a0a09f45d0e5b48ecb6a4a7b4b4c89c88d3f633f
+  RxSwift: 18ee9d78b45edb3b0b7e79916b47a116e6dbc842
   SnapKit: 2e456761aa92d4d4067a7a5594c18769d451a8ad
   SpinKit: 65906a8b534a4e14cbfd3f8b0b6c329131faef4a
 
-PODFILE CHECKSUM: 72d828dacaecdf8320ed6dfc803c57aced04facd
+PODFILE CHECKSUM: 22f2fb489274ac4648634961f10daf3a41c84115
 
 COCOAPODS: 1.2.0

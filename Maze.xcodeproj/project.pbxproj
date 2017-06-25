@@ -52,9 +52,37 @@
 		13D6D8E91E7A858500B092B2 /* TVMazeShowResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6D8E81E7A858500B092B2 /* TVMazeShowResult.swift */; };
 		13D6D8EB1E7A916700B092B2 /* TVMazeShowImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6D8EA1E7A916700B092B2 /* TVMazeShowImage.swift */; };
 		13D6D8ED1E7ACA7200B092B2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13D6D8EC1E7ACA7200B092B2 /* LocationManager.swift */; };
+		7B4901981F0046810039B313 /* OFL.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901851F0046810039B313 /* OFL.txt */; };
+		7B4901991F0046810039B313 /* Raleway-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901861F0046810039B313 /* Raleway-Black.ttf */; };
+		7B49019A1F0046810039B313 /* Raleway-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901871F0046810039B313 /* Raleway-BlackItalic.ttf */; };
+		7B49019B1F0046810039B313 /* Raleway-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901881F0046810039B313 /* Raleway-Bold.ttf */; };
+		7B49019C1F0046810039B313 /* Raleway-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901891F0046810039B313 /* Raleway-BoldItalic.ttf */; };
+		7B49019D1F0046810039B313 /* Raleway-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B49018A1F0046810039B313 /* Raleway-ExtraBold.ttf */; };
+		7B49019E1F0046810039B313 /* Raleway-ExtraBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B49018B1F0046810039B313 /* Raleway-ExtraBoldItalic.ttf */; };
+		7B49019F1F0046810039B313 /* Raleway-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B49018C1F0046810039B313 /* Raleway-ExtraLight.ttf */; };
+		7B4901A01F0046810039B313 /* Raleway-ExtraLightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B49018D1F0046810039B313 /* Raleway-ExtraLightItalic.ttf */; };
+		7B4901A11F0046810039B313 /* Raleway-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B49018E1F0046810039B313 /* Raleway-Italic.ttf */; };
+		7B4901A21F0046810039B313 /* Raleway-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B49018F1F0046810039B313 /* Raleway-Light.ttf */; };
+		7B4901A31F0046810039B313 /* Raleway-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901901F0046810039B313 /* Raleway-LightItalic.ttf */; };
+		7B4901A41F0046810039B313 /* Raleway-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901911F0046810039B313 /* Raleway-Medium.ttf */; };
+		7B4901A51F0046810039B313 /* Raleway-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901921F0046810039B313 /* Raleway-MediumItalic.ttf */; };
+		7B4901A61F0046810039B313 /* Raleway-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901931F0046810039B313 /* Raleway-Regular.ttf */; };
+		7B4901A71F0046810039B313 /* Raleway-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901941F0046810039B313 /* Raleway-SemiBold.ttf */; };
+		7B4901A81F0046810039B313 /* Raleway-SemiBoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901951F0046810039B313 /* Raleway-SemiBoldItalic.ttf */; };
+		7B4901A91F0046810039B313 /* Raleway-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901961F0046810039B313 /* Raleway-Thin.ttf */; };
+		7B4901AA1F0046810039B313 /* Raleway-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901971F0046810039B313 /* Raleway-ThinItalic.ttf */; };
+		7B4901AE1F004A610039B313 /* ShowTitleItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4901AB1F004A610039B313 /* ShowTitleItemView.swift */; };
+		7B4901AF1F004A610039B313 /* ShowTitleItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7B4901AC1F004A610039B313 /* ShowTitleItemView.xib */; };
+		7B4901B01F004A610039B313 /* ShowTitleItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B4901AD1F004A610039B313 /* ShowTitleItemViewModel.swift */; };
 		7BD3ED861EFFAABB004DFEA5 /* ScheduleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD3ED851EFFAABB004DFEA5 /* ScheduleViewController.swift */; };
 		7BD3ED881EFFAAC5004DFEA5 /* ScheduleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD3ED871EFFAAC5004DFEA5 /* ScheduleViewModel.swift */; };
 		7BD3ED8C1EFFAEBF004DFEA5 /* TVMazeEpisode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BD3ED8B1EFFAEBF004DFEA5 /* TVMazeEpisode.swift */; };
+		7BDEC7851EFFD3D700322CCE /* EpisodeItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDEC7821EFFD3D700322CCE /* EpisodeItemView.swift */; };
+		7BDEC7861EFFD3D700322CCE /* EpisodeItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BDEC7831EFFD3D700322CCE /* EpisodeItemView.xib */; };
+		7BDEC7871EFFD3D700322CCE /* EpisodeItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDEC7841EFFD3D700322CCE /* EpisodeItemViewModel.swift */; };
+		7BDEC7951F001E3300322CCE /* PosterItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDEC7921F001E3300322CCE /* PosterItemView.swift */; };
+		7BDEC7961F001E3300322CCE /* PosterItemView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7BDEC7931F001E3300322CCE /* PosterItemView.xib */; };
+		7BDEC7971F001E3300322CCE /* PosterItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BDEC7941F001E3300322CCE /* PosterItemViewModel.swift */; };
 		D91BECA225AA88B963EDE096 /* Pods_Maze.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7DC635CFF147C1D1E8960B1 /* Pods_Maze.framework */; };
 /* End PBXBuildFile section */
 
@@ -108,9 +136,37 @@
 		13D6D8EA1E7A916700B092B2 /* TVMazeShowImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMazeShowImage.swift; sourceTree = "<group>"; };
 		13D6D8EC1E7ACA7200B092B2 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		6695E40BAF031A97B5C36F0C /* Pods-Maze.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Maze.release.xcconfig"; path = "Pods/Target Support Files/Pods-Maze/Pods-Maze.release.xcconfig"; sourceTree = "<group>"; };
+		7B4901851F0046810039B313 /* OFL.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = OFL.txt; sourceTree = "<group>"; };
+		7B4901861F0046810039B313 /* Raleway-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Black.ttf"; sourceTree = "<group>"; };
+		7B4901871F0046810039B313 /* Raleway-BlackItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-BlackItalic.ttf"; sourceTree = "<group>"; };
+		7B4901881F0046810039B313 /* Raleway-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Bold.ttf"; sourceTree = "<group>"; };
+		7B4901891F0046810039B313 /* Raleway-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-BoldItalic.ttf"; sourceTree = "<group>"; };
+		7B49018A1F0046810039B313 /* Raleway-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBold.ttf"; sourceTree = "<group>"; };
+		7B49018B1F0046810039B313 /* Raleway-ExtraBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraBoldItalic.ttf"; sourceTree = "<group>"; };
+		7B49018C1F0046810039B313 /* Raleway-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLight.ttf"; sourceTree = "<group>"; };
+		7B49018D1F0046810039B313 /* Raleway-ExtraLightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ExtraLightItalic.ttf"; sourceTree = "<group>"; };
+		7B49018E1F0046810039B313 /* Raleway-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Italic.ttf"; sourceTree = "<group>"; };
+		7B49018F1F0046810039B313 /* Raleway-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Light.ttf"; sourceTree = "<group>"; };
+		7B4901901F0046810039B313 /* Raleway-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-LightItalic.ttf"; sourceTree = "<group>"; };
+		7B4901911F0046810039B313 /* Raleway-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Medium.ttf"; sourceTree = "<group>"; };
+		7B4901921F0046810039B313 /* Raleway-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-MediumItalic.ttf"; sourceTree = "<group>"; };
+		7B4901931F0046810039B313 /* Raleway-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Regular.ttf"; sourceTree = "<group>"; };
+		7B4901941F0046810039B313 /* Raleway-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBold.ttf"; sourceTree = "<group>"; };
+		7B4901951F0046810039B313 /* Raleway-SemiBoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-SemiBoldItalic.ttf"; sourceTree = "<group>"; };
+		7B4901961F0046810039B313 /* Raleway-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-Thin.ttf"; sourceTree = "<group>"; };
+		7B4901971F0046810039B313 /* Raleway-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Raleway-ThinItalic.ttf"; sourceTree = "<group>"; };
+		7B4901AB1F004A610039B313 /* ShowTitleItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTitleItemView.swift; sourceTree = "<group>"; };
+		7B4901AC1F004A610039B313 /* ShowTitleItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShowTitleItemView.xib; sourceTree = "<group>"; };
+		7B4901AD1F004A610039B313 /* ShowTitleItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowTitleItemViewModel.swift; sourceTree = "<group>"; };
 		7BD3ED851EFFAABB004DFEA5 /* ScheduleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewController.swift; sourceTree = "<group>"; };
 		7BD3ED871EFFAAC5004DFEA5 /* ScheduleViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScheduleViewModel.swift; sourceTree = "<group>"; };
 		7BD3ED8B1EFFAEBF004DFEA5 /* TVMazeEpisode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMazeEpisode.swift; sourceTree = "<group>"; };
+		7BDEC7821EFFD3D700322CCE /* EpisodeItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeItemView.swift; sourceTree = "<group>"; };
+		7BDEC7831EFFD3D700322CCE /* EpisodeItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EpisodeItemView.xib; sourceTree = "<group>"; };
+		7BDEC7841EFFD3D700322CCE /* EpisodeItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EpisodeItemViewModel.swift; sourceTree = "<group>"; };
+		7BDEC7921F001E3300322CCE /* PosterItemView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterItemView.swift; sourceTree = "<group>"; };
+		7BDEC7931F001E3300322CCE /* PosterItemView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PosterItemView.xib; sourceTree = "<group>"; };
+		7BDEC7941F001E3300322CCE /* PosterItemViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PosterItemViewModel.swift; sourceTree = "<group>"; };
 		E7DC635CFF147C1D1E8960B1 /* Pods_Maze.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Maze.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -164,6 +220,9 @@
 				130059F11E7C1CD30055793B /* ShowDetail */,
 				132C601C1E828BC50041D85E /* ShowList */,
 				132C60131E826DC30041D85E /* Description */,
+				7BDEC7881EFFD3DB00322CCE /* Episode */,
+				7BDEC7981F00221600322CCE /* Poster */,
+				7B4901B11F004C870039B313 /* Show title */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -253,6 +312,7 @@
 		133E18DE1E79811700FE0EEE /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				7B4901841F0046810039B313 /* Raleway */,
 				133E18DF1E79811700FE0EEE /* Utilities.swift */,
 				132C601A1E8270720041D85E /* Styles.swift */,
 				133E18E11E79811700FE0EEE /* Operators.swift */,
@@ -304,6 +364,42 @@
 				E7DC635CFF147C1D1E8960B1 /* Pods_Maze.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7B4901841F0046810039B313 /* Raleway */ = {
+			isa = PBXGroup;
+			children = (
+				7B4901851F0046810039B313 /* OFL.txt */,
+				7B4901861F0046810039B313 /* Raleway-Black.ttf */,
+				7B4901871F0046810039B313 /* Raleway-BlackItalic.ttf */,
+				7B4901881F0046810039B313 /* Raleway-Bold.ttf */,
+				7B4901891F0046810039B313 /* Raleway-BoldItalic.ttf */,
+				7B49018A1F0046810039B313 /* Raleway-ExtraBold.ttf */,
+				7B49018B1F0046810039B313 /* Raleway-ExtraBoldItalic.ttf */,
+				7B49018C1F0046810039B313 /* Raleway-ExtraLight.ttf */,
+				7B49018D1F0046810039B313 /* Raleway-ExtraLightItalic.ttf */,
+				7B49018E1F0046810039B313 /* Raleway-Italic.ttf */,
+				7B49018F1F0046810039B313 /* Raleway-Light.ttf */,
+				7B4901901F0046810039B313 /* Raleway-LightItalic.ttf */,
+				7B4901911F0046810039B313 /* Raleway-Medium.ttf */,
+				7B4901921F0046810039B313 /* Raleway-MediumItalic.ttf */,
+				7B4901931F0046810039B313 /* Raleway-Regular.ttf */,
+				7B4901941F0046810039B313 /* Raleway-SemiBold.ttf */,
+				7B4901951F0046810039B313 /* Raleway-SemiBoldItalic.ttf */,
+				7B4901961F0046810039B313 /* Raleway-Thin.ttf */,
+				7B4901971F0046810039B313 /* Raleway-ThinItalic.ttf */,
+			);
+			path = Raleway;
+			sourceTree = "<group>";
+		};
+		7B4901B11F004C870039B313 /* Show title */ = {
+			isa = PBXGroup;
+			children = (
+				7B4901AB1F004A610039B313 /* ShowTitleItemView.swift */,
+				7B4901AC1F004A610039B313 /* ShowTitleItemView.xib */,
+				7B4901AD1F004A610039B313 /* ShowTitleItemViewModel.swift */,
+			);
+			name = "Show title";
 			sourceTree = "<group>";
 		};
 		7B70209D1EC6EA0000A01096 /* Genres */ = {
@@ -358,6 +454,26 @@
 				7BD3ED871EFFAAC5004DFEA5 /* ScheduleViewModel.swift */,
 			);
 			name = Schedule;
+			sourceTree = "<group>";
+		};
+		7BDEC7881EFFD3DB00322CCE /* Episode */ = {
+			isa = PBXGroup;
+			children = (
+				7BDEC7821EFFD3D700322CCE /* EpisodeItemView.swift */,
+				7BDEC7831EFFD3D700322CCE /* EpisodeItemView.xib */,
+				7BDEC7841EFFD3D700322CCE /* EpisodeItemViewModel.swift */,
+			);
+			name = Episode;
+			sourceTree = "<group>";
+		};
+		7BDEC7981F00221600322CCE /* Poster */ = {
+			isa = PBXGroup;
+			children = (
+				7BDEC7921F001E3300322CCE /* PosterItemView.swift */,
+				7BDEC7931F001E3300322CCE /* PosterItemView.xib */,
+				7BDEC7941F001E3300322CCE /* PosterItemViewModel.swift */,
+			);
+			name = Poster;
 			sourceTree = "<group>";
 		};
 		EE7B5F552E19C5257268F7D1 /* Pods */ = {
@@ -432,14 +548,36 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7BDEC7861EFFD3D700322CCE /* EpisodeItemView.xib in Resources */,
+				7B4901AA1F0046810039B313 /* Raleway-ThinItalic.ttf in Resources */,
+				7B4901981F0046810039B313 /* OFL.txt in Resources */,
+				7B49019F1F0046810039B313 /* Raleway-ExtraLight.ttf in Resources */,
+				7B4901A21F0046810039B313 /* Raleway-Light.ttf in Resources */,
 				132C60181E826DD50041D85E /* DescriptionItemCollectionViewCell.xib in Resources */,
 				130059DE1E7BE34A0055793B /* GenreItemCollectionViewCell.xib in Resources */,
+				7B4901A01F0046810039B313 /* Raleway-ExtraLightItalic.ttf in Resources */,
+				7B4901A11F0046810039B313 /* Raleway-Italic.ttf in Resources */,
 				135B3D071E8120C900662577 /* DetailItemCollectionViewCell.xib in Resources */,
+				7B4901A81F0046810039B313 /* Raleway-SemiBoldItalic.ttf in Resources */,
+				7B4901A71F0046810039B313 /* Raleway-SemiBold.ttf in Resources */,
 				133E18EF1E79811700FE0EEE /* LaunchScreen.storyboard in Resources */,
 				130059FE1E7C27B90055793B /* ShowActorItemCollectionViewCell.xib in Resources */,
+				7B4901A91F0046810039B313 /* Raleway-Thin.ttf in Resources */,
+				7B4901AF1F004A610039B313 /* ShowTitleItemView.xib in Resources */,
+				7B4901A61F0046810039B313 /* Raleway-Regular.ttf in Resources */,
+				7B49019E1F0046810039B313 /* Raleway-ExtraBoldItalic.ttf in Resources */,
+				7B49019B1F0046810039B313 /* Raleway-Bold.ttf in Resources */,
+				7B49019D1F0046810039B313 /* Raleway-ExtraBold.ttf in Resources */,
+				7BDEC7961F001E3300322CCE /* PosterItemView.xib in Resources */,
+				7B4901991F0046810039B313 /* Raleway-Black.ttf in Resources */,
 				133E18E91E79811700FE0EEE /* Assets.xcassets in Resources */,
+				7B49019A1F0046810039B313 /* Raleway-BlackItalic.ttf in Resources */,
+				7B49019C1F0046810039B313 /* Raleway-BoldItalic.ttf in Resources */,
+				7B4901A31F0046810039B313 /* Raleway-LightItalic.ttf in Resources */,
 				133E19091E7989BC00FE0EEE /* ShowItemCollectionViewCell.xib in Resources */,
+				7B4901A51F0046810039B313 /* Raleway-MediumItalic.ttf in Resources */,
 				133E18E71E79811700FE0EEE /* Main.storyboard in Resources */,
+				7B4901A41F0046810039B313 /* Raleway-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -505,8 +643,10 @@
 				133E19081E7989BC00FE0EEE /* ShowItemCollectionViewCell.swift in Sources */,
 				13D6D8EB1E7A916700B092B2 /* TVMazeShowImage.swift in Sources */,
 				133E18D61E79811700FE0EEE /* ViewModelFactory.swift in Sources */,
+				7BDEC7871EFFD3D700322CCE /* EpisodeItemViewModel.swift in Sources */,
 				130059E01E7BE34A0055793B /* GenresViewController.swift in Sources */,
 				133E190A1E7989BC00FE0EEE /* ShowItemViewModel.swift in Sources */,
+				7BDEC7851EFFD3D700322CCE /* EpisodeItemView.swift in Sources */,
 				133E18EC1E79811700FE0EEE /* ViewController+Shared.swift in Sources */,
 				133E18E21E79811700FE0EEE /* Operators.swift in Sources */,
 				7BD3ED861EFFAABB004DFEA5 /* ScheduleViewController.swift in Sources */,
@@ -523,7 +663,9 @@
 				13D6D8E91E7A858500B092B2 /* TVMazeShowResult.swift in Sources */,
 				13D6D8ED1E7ACA7200B092B2 /* LocationManager.swift in Sources */,
 				13D6D8E41E7A789E00B092B2 /* ImageDownloader.swift in Sources */,
+				7B4901B01F004A610039B313 /* ShowTitleItemViewModel.swift in Sources */,
 				132C60171E826DD50041D85E /* DescriptionItemCollectionViewCell.swift in Sources */,
+				7B4901AE1F004A610039B313 /* ShowTitleItemView.swift in Sources */,
 				133E18DB1E79811700FE0EEE /* Router.swift in Sources */,
 				13005A011E7C27B90055793B /* ShowActorsViewModel.swift in Sources */,
 				130059E11E7BE34A0055793B /* GenresViewModel.swift in Sources */,
@@ -535,6 +677,8 @@
 				133E18DD1E79811700FE0EEE /* Router+Preview.swift in Sources */,
 				133E18F71E79822600FE0EEE /* TVMaze.swift in Sources */,
 				133E18E41E79811700FE0EEE /* SeparatorLayout.swift in Sources */,
+				7BDEC7951F001E3300322CCE /* PosterItemView.swift in Sources */,
+				7BDEC7971F001E3300322CCE /* PosterItemViewModel.swift in Sources */,
 				130059DF1E7BE34A0055793B /* GenreItemViewModel.swift in Sources */,
 				7BD3ED881EFFAAC5004DFEA5 /* ScheduleViewModel.swift in Sources */,
 				135B3D061E8120C900662577 /* DetailItemCollectionViewCell.swift in Sources */,

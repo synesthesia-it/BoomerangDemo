@@ -23,22 +23,26 @@ class ShowActorItemCollectionViewCell: UICollectionViewCell, ViewModelBindable {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
+        self.actorPhoto.layer.cornerRadius = 25
+        self.actorPhoto.layer.masksToBounds = true
     }
     
     func bind(to viewModel: ViewModelType?) {
+        self.disposeBag = DisposeBag()
+        
         guard let viewModel = viewModel as? ShowActorItemViewModel else {
             return
         }
         self.viewModel = viewModel
         self.actorName.text = viewModel.actorName
-        if let charName = viewModel.characterName {
-            self.characterName.text = "as \(charName)"
-        }
+        
+            self.characterName.text =  viewModel.characterName
+        
         
         self.disposeBag = DisposeBag()
         viewModel.actorPhoto?
-            .bindTo(self.actorPhoto.rx.image)
-            .addDisposableTo(self.disposeBag)
+            .bind(to:self.actorPhoto.rx.image)
+            .disposed(by:self.disposeBag)
     }
     
 }
