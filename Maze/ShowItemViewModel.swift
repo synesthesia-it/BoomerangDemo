@@ -28,7 +28,7 @@ final class ShowItemViewModel: ItemViewModelType {
         self.model = model
         id = model.id
         itemTitle = model.name
-        image = model.thumbnail?.get().shareReplay(1)
+        image = model.thumbnail?.get().shareReplay(1) ?? .just(nil)
         networkName = model.network?.name
         status = model.status
         description = [networkName, status].flatMap({ $0 }).joined(separator: " - ")
