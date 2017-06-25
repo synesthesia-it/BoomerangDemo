@@ -2,8 +2,8 @@
 //  Styles.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 22/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 22/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation

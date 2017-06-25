@@ -2,8 +2,8 @@
 //  GenresViewModel.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 17/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 17/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
@@ -41,7 +41,7 @@ final class GenresViewModel : ListViewModelType, ViewModelTypeSelectable {
     }
     
     
-    init(withShow show:TVMaze.Show) {
+    init(withShow show:Show) {
         let array = show.genres ?? []
         self.dataHolder = ListDataHolder(data: .just(ModelStructure(array)))
     }

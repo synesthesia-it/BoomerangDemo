@@ -2,17 +2,17 @@
 //  TVMazeShowImage.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 16/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 16/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
 import Gloss
 import RxSwift
 
-extension TVMaze {
 
-    struct Image:  ObservableImageType {
+
+    class Image:  ObservableImageType {
         
         let path: String
 
@@ -30,4 +30,4 @@ extension TVMaze {
         
     }
 
-}
+

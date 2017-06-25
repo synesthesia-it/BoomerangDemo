@@ -31,7 +31,7 @@ internal extension UIViewController {
     }
 }
 
- extension ViewModelBindable where Self : UIViewController {
+extension ViewModelBindable where Self : UIViewController {
     func withViewModel<T:ViewModelBindableType>(_ viewModel:ViewModelType) -> T {
         self.bind(to:viewModel, afterLoad: true)
         return self as! T
@@ -71,7 +71,7 @@ struct Router : RouterType {
         popover.barButtonItem = item
         return UIViewControllerRouterAction.modal(source: source, destination: alert, completion: nil)
     }
-
+    
     
     public static func from<Source> (_ source:Source, viewModel:ViewModelType) -> RouterAction where Source: UIViewController {
         switch viewModel {
@@ -105,10 +105,28 @@ struct Router : RouterType {
     }
     
     public static func root() -> UIViewController {
-        let source:ShowsViewController = (Storyboard.main.scene(.showList) as ShowsViewController)
-            .withViewModel(ViewModelFactory.showsViewModel())
-        return source.withNavigation()
+        //        let source:ShowsViewController = (Storyboard.main.scene(.showList) as ShowsViewController)
+        //            .withViewModel(ViewModelFactory.showsViewModel())
+//        let source:ScheduleViewController = (Storyboard.main.scene(.schedule) as ScheduleViewController)
+//            .withViewModel(ViewModelFactory.scheduleViewModel())
+//        return source.withNavigation()
+        return tab()
     }
+    
+    public static func tab() -> UITabBarController {
+        
+        let tab = UITabBarController()
+        
+        let search:ShowsViewController = (Storyboard.main.scene(.showList) as ShowsViewController)
+            .withViewModel(ViewModelFactory.showsViewModel())
+        let schedule:ScheduleViewController = (Storyboard.main.scene(.schedule) as ScheduleViewController)
+            .withViewModel(ViewModelFactory.scheduleViewModel())
+        
+    tab.viewControllers =  [search.withNavigation(), schedule.withNavigation()]
+        return tab
+        
+    }
+    
     
     public static func rootController() -> UIViewController? {
         return UIApplication.shared.keyWindow?.rootViewController
@@ -117,7 +135,7 @@ struct Router : RouterType {
     public static func restart() {
         UIApplication.shared.keyWindow?.rootViewController = Router.root()
     }
-
+    
     public static func openApp<Source> (_ url: URL?, from source: Source) -> RouterAction where Source: UIViewController{
         if url == nil { return EmptyRouterAction() }
         return UIViewControllerRouterAction.custom {
@@ -126,18 +144,18 @@ struct Router : RouterType {
     }
     
     public static func playVideo<Source> (_ url: URL?, from source: Source) -> RouterAction where Source: UIViewController {
-            guard let urlFormatted:URL = URL(string:url?.absoluteString.removingPercentEncoding ?? "") else {
-                return EmptyRouterAction()
-            }
-
-            let playerController = AVPlayerViewController()
-            let asset:AVURLAsset = AVURLAsset(url: urlFormatted, options: [:])
-
-            return UIViewControllerRouterAction.modal(source: source, destination: playerController, completion: {
-                let playerItem:AVPlayerItem =  AVPlayerItem(asset: asset)
-                playerController.player = AVPlayer(playerItem: playerItem)
-                playerController.player?.play()
-            })
+        guard let urlFormatted:URL = URL(string:url?.absoluteString.removingPercentEncoding ?? "") else {
+            return EmptyRouterAction()
+        }
+        
+        let playerController = AVPlayerViewController()
+        let asset:AVURLAsset = AVURLAsset(url: urlFormatted, options: [:])
+        
+        return UIViewControllerRouterAction.modal(source: source, destination: playerController, completion: {
+            let playerItem:AVPlayerItem =  AVPlayerItem(asset: asset)
+            playerController.player = AVPlayer(playerItem: playerItem)
+            playerController.player?.play()
+        })
     }
     
 }

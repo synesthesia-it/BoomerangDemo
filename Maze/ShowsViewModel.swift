@@ -2,8 +2,8 @@
 //  ShowsViewModel.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 15/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 15/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
@@ -24,7 +24,7 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable, ViewMod
     var dataHolder: ListDataHolderType = ListDataHolder()
     var query = Variable("Alias")
     func itemViewModel(fromModel model: ModelType) -> ItemViewModelType? {
-        guard let item = model as? TVMaze.Show else {
+        guard let item = model as? Show else {
             return model as? ItemViewModelType
         }
         return ShowItemViewModel(model:item)
@@ -33,7 +33,7 @@ final class ShowsViewModel : ListViewModelType, ViewModelTypeSelectable, ViewMod
     lazy var selection:Action<ShowSelectionInput,ShowSelectionOutput> = Action { input in
         switch input {
         case .item(let indexPath):
-            guard let model = (self.model(atIndex: indexPath) as? TVMaze.Show) else {
+            guard let model = (self.model(atIndex: indexPath) as? Show) else {
                 return .empty()
             }
             //return Observable<ShowSelectionOutput>

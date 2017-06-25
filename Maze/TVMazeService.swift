@@ -2,8 +2,8 @@
 //  TVMazeService.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 16/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 16/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
@@ -15,22 +15,25 @@ import Boomerang
  TVMaze API doc: http://www.tvmaze.com/api
  */
 
-extension TVMaze {
+
     
     enum Service {
         case searchShows(query: String)
         case getShow(id: Int)
         case castOfShow(id: Int)
+        case schedule
     }
     
-}
 
-extension TVMaze.Service: TargetType {
+
+extension Service: TargetType {
     
     var baseURL: URL { return URL(string: "https://api.tvmaze.com")! }
     
     var path: String {
         switch self {
+        case .schedule :
+            return "schedule"
         case .searchShows:
             return "/search/shows"
         case .getShow(let id):
@@ -42,7 +45,7 @@ extension TVMaze.Service: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .searchShows, .getShow, .castOfShow:
+        default:
             return .get
         }
     }

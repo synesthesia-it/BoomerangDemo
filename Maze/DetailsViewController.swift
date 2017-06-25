@@ -2,8 +2,8 @@
 //  DetailsViewController.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 21/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 21/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import UIKit

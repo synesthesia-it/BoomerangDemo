@@ -2,8 +2,8 @@
 //  ShowActorsViewController.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 17/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 17/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import UIKit

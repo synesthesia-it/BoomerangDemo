@@ -14,6 +14,7 @@ enum SceneIdentifier : String, ListIdentifier {
     case showDetail = "showDetail"
     case genres = "genres"
     case actors = "actors"
+    case schedule = "schedule"
     var name: String { return self.rawValue }
     var type: String? { return nil }
 }

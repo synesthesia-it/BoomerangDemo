@@ -10,31 +10,34 @@ struct ViewModelFactory {
     
     static func showDetailViewModel(of model: ModelType) -> ViewModelType? {
         switch model {
-        case is TVMaze.Show :
-            return DetailsViewModel(of: model as! TVMaze.Show)
+        case is Show :
+            return DetailsViewModel(of: model as! Show)
         
         default : return nil
         }
     }
     
-    static func showDetailItemViewModel(withModel model: TVMaze.Show) -> ItemViewModelType {
+    static func showDetailItemViewModel(withModel model: Show) -> ItemViewModelType {
         return DetailItemViewModel(model: model)
     }
     
     
-    static func showDescriptionItemViewModel(withModel model: TVMaze.Show) -> ItemViewModelType {
+    static func showDescriptionItemViewModel(withModel model: Show) -> ItemViewModelType {
         return DescriptionItemViewModel(model: model)
     }
     
     static func showsViewModel() -> ViewModelType {
         return ShowsViewModel()
     }
+    static func scheduleViewModel() -> ViewModelType {
+        return ScheduleViewModel()
+    }
     
-    static func showItemViewModel(withModel model: TVMaze.Show) -> ItemViewModelType {
+    static func showItemViewModel(withModel model: Show) -> ItemViewModelType {
         return ShowItemViewModel(model: model)
     }
     
-    static func genresViewModel(forShow show: TVMaze.Show) -> ViewModelType {
+    static func genresViewModel(forShow show: Show) -> ViewModelType {
         return GenresViewModel(withShow:show)
     }
     
@@ -42,11 +45,11 @@ struct ViewModelFactory {
         return GenreItemViewModel(model: model)
     }
     
-    static func actorItemViewModel(withModel model: TVMaze.Actor) -> ItemViewModelType {
+    static func actorItemViewModel(withModel model: Actor) -> ItemViewModelType {
         return ShowActorItemViewModel(model: model)
     }
     
-    static func actorsViewModel(forShow show: TVMaze.Show) -> ViewModelType {
+    static func actorsViewModel(forShow show: Show) -> ViewModelType {
         return ShowActorsViewModel(withModel: show)
     }
     

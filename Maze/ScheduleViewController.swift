@@ -1,8 +1,8 @@
 //
-//  GenresViewController.swift
+//  ScheduleViewController.swift
 //  Maze
 //
-//  Created by Synesthesia on 17/03/2017.
+//  Created by Stefano Mondino on 25/06/17.
 //  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
@@ -12,20 +12,20 @@ import RxCocoa
 import Boomerang
 
 
-class GenresViewController : UIViewController, ViewModelBindable, UICollectionViewDelegateFlowLayout {
+class ScheduleViewController : UIViewController, ViewModelBindable, UICollectionViewDelegateFlowLayout {
     
     @IBOutlet weak var collectionView: UICollectionView!
-    var viewModel: GenresViewModel?
+    var viewModel: ScheduleViewModel?
     var flow:UICollectionViewFlowLayout? {
         return self.collectionView?.collectionViewLayout as? UICollectionViewFlowLayout
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "Genres"
+        self.title = "Schedule"
     }
     
     func bind(to viewModel: ViewModelType?) {
-        guard let viewModel = viewModel as? GenresViewModel else {
+        guard let viewModel = viewModel as? ScheduleViewModel else {
             return
         }
         
@@ -42,14 +42,17 @@ class GenresViewController : UIViewController, ViewModelBindable, UICollectionVi
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 10
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        return 0
+        return 10
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return UIEdgeInsets.zero
+        return UIEdgeInsets(top: 60, left: 10, bottom: 20, right: 10)
     }
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return collectionView.autosizeItemAt(indexPath: indexPath, itemsPerLine: 1)
     }

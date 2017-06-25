@@ -2,35 +2,35 @@
 //  TVMazeShowActor.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 17/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 17/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
 import Boomerang
 import Gloss
 
-extension TVMaze {
+
     
-    struct Actor: Decodable, ModelType {
+    class Actor: Decodable, ModelType {
         
-        let person: TVMaze.Person?
-        let character: TVMaze.Character?
+        let person: Person?
+        let character: Character?
         
-        init?(json: JSON) {
+        required init?(json: JSON) {
             person = "person" <~~ json
             character = "character" <~~ json
         }
         
     }
     
-    struct Person: Decodable, ModelType {
+    class Person: Decodable, ModelType {
         
         let id: Int
         let name: String
-        var mediumImage: TVMaze.Image?
+        var mediumImage: Image?
         
-        init?(json: JSON) {
+        required init?(json: JSON) {
             guard let name: String = "name" <~~ json,
                 let id: Int = "id" <~~ json
                 else { return nil }
@@ -38,19 +38,19 @@ extension TVMaze {
             self.id = id
             self.name = name
             if let imgPath: String = "image.medium" <~~ json {
-                self.mediumImage = TVMaze.Image(path: imgPath)
+                self.mediumImage = Image(path: imgPath)
             }
         }
         
     }
     
-    struct Character: Decodable, ModelType {
+    class Character: Decodable, ModelType {
         
         let id: Int
         let name: String
-        var mediumImage: TVMaze.Image?
+        var mediumImage: Image?
         
-        init?(json: JSON) {
+        required init?(json: JSON) {
             guard let name: String = "name" <~~ json,
                 let id: Int = "id" <~~ json
                 else { return nil }
@@ -58,10 +58,10 @@ extension TVMaze {
             self.id = id
             self.name = name
             if let imgPath: String = "image.medium" <~~ json {
-                self.mediumImage = TVMaze.Image(path: imgPath)
+                self.mediumImage = Image(path: imgPath)
             }
         }
         
     }
     
-}
+

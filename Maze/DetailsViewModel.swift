@@ -2,8 +2,8 @@
 //  DetailsViewModel.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 21/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 21/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
@@ -30,7 +30,7 @@ final class DetailsViewModel : ListViewModelType, ViewModelTypeSelectable, ListV
         if let genre = model as? Genre {
             return ViewModelFactory.genreItemViewModel(withModel: genre)
         }
-        if let actor = model as? TVMaze.Actor {
+        if let actor = model as? Actor {
             return ViewModelFactory.actorItemViewModel(withModel: actor)
         }
         return model as? ItemViewModelType
@@ -57,7 +57,7 @@ final class DetailsViewModel : ListViewModelType, ViewModelTypeSelectable, ListV
         return indexPath.section == 0 ? 1 : 2
     }
     
-    init(of show: TVMaze.Show) {
+    init(of show: Show) {
         let show = Observable.just(show).map { show -> ModelStructure in
             let s1 = ModelStructure([ ViewModelFactory.showItemViewModel(withModel: show)/*, ViewModelFactory.showDescriptionItemViewModel(withModel: show)*/])
             let s2 = ModelStructure([])

@@ -2,8 +2,8 @@
 //  ShowActorItemViewModel.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 17/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 17/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
@@ -19,7 +19,7 @@ final class ShowActorItemViewModel : ItemViewModelType {
     var characterName: String?
     var actorPhoto: ObservableImage?
     
-    init(model: TVMaze.Actor) {
+    init(model: Actor) {
         self.model = model
         self.actorName = model.person?.name
         self.characterName = model.character?.name

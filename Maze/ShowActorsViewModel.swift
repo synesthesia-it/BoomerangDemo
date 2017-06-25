@@ -2,8 +2,8 @@
 //  ShowActorsViewModel.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 17/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 17/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
@@ -24,7 +24,7 @@ final class ShowActorsViewModel: ListViewModelType, ViewModelTypeSelectable {
     var dataHolder: ListDataHolderType = ListDataHolder()
     
     func itemViewModel(fromModel model: ModelType) -> ItemViewModelType? {
-        guard let item = model as? TVMaze.Actor else {
+        guard let item = model as? Actor else {
             return model as? ItemViewModelType
         }
         return ViewModelFactory.actorItemViewModel(withModel: item)
@@ -33,7 +33,7 @@ final class ShowActorsViewModel: ListViewModelType, ViewModelTypeSelectable {
     lazy var selection:Action<ShowActorSelectionInput,ShowActorSelectionOutput> = Action { input in
         switch input {
         case .item(let indexPath):
-            guard let model = (self.model(atIndex:indexPath) as? TVMaze.Actor) else {
+            guard let model = (self.model(atIndex:indexPath) as? Actor) else {
                 return .empty()
             }
             
@@ -43,7 +43,7 @@ final class ShowActorsViewModel: ListViewModelType, ViewModelTypeSelectable {
         }
     }
     
-    init(withModel model: TVMaze.Show) {
+    init(withModel model: Show) {
         let obs = TVMaze.getCast(forShow: model).structured()
         self.dataHolder = ListDataHolder(data: obs)
     }

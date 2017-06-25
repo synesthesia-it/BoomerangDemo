@@ -2,8 +2,8 @@
 //  ShowItemViewModel.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 15/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 15/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
@@ -24,7 +24,7 @@ final class ShowItemViewModel: ItemViewModelType {
     
     var description: String?
     
-    init(model: TVMaze.Show) {
+    init(model: Show) {
         self.model = model
         id = model.id
         itemTitle = model.name

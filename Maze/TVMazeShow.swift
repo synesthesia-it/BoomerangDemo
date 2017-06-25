@@ -2,8 +2,8 @@
 //  TVMazeShow.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 16/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 16/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
@@ -11,21 +11,21 @@ import Boomerang
 import Gloss
 typealias Genre = String
 
-extension TVMaze {
+
     
-    struct Show: Decodable, ModelType {
+    class Show: Decodable, ModelType {
         
         let id: Int
         let name: String
         let summary: String
         let status: String?
-        var thumbnail: TVMaze.Image?
-        var network: TVMaze.Network?
+        var thumbnail: Image?
+        var network: Network?
         var genres: [Genre]?
-        var actors:[TVMaze.Actor]?
-        var _embedded: TVMaze.Embedded?
+        var actors:[Actor]?
+        var _embedded: Embedded?
         
-        init?(json: JSON) {
+        required init?(json: JSON) {
             guard let name: String = "name" <~~ json,
                 let id: Int = "id" <~~ json
                 else { return nil }
@@ -37,7 +37,7 @@ extension TVMaze {
             self.network = "network" <~~ json
             self.genres = "genres" <~~ json
             if let thumbPath: String = "image.medium" <~~ json {
-                self.thumbnail = TVMaze.Image(path: thumbPath)
+                self.thumbnail = Image(path: thumbPath)
             }
             self._embedded = "_embedded" <~~ json
             self.actors = "_embedded.cast" <~~ json
@@ -47,7 +47,7 @@ extension TVMaze {
 
     struct Embedded: Decodable, ModelType {
         
-        var cast: [TVMaze.Actor]?
+        var cast: [Actor]?
         
         init?(json: JSON) {
             self.cast = "cast" <~~ json
@@ -56,4 +56,4 @@ extension TVMaze {
     }
 
     
-}
+

@@ -2,8 +2,8 @@
 //  DetailItemViewModel.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 21/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 21/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
@@ -15,7 +15,7 @@ final class DetailItemViewModel: ItemViewModelType {
     var model: ItemViewModelType.Model
     var itemIdentifier: ListIdentifier = ""
     
-    init(model: TVMaze.Show) {
+    init(model: Show) {
         self.model = model
     }
     

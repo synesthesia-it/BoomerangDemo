@@ -2,8 +2,8 @@
 //  DescriptionItemViewModel.swift
 //  Maze
 //
-//  Created by Cristian Bellomo on 22/03/2017.
-//  Copyright © 2017 Cristian Bellomo. All rights reserved.
+//  Created by Synesthesia on 22/03/2017.
+//  Copyright © 2017 Synesthesia. All rights reserved.
 //
 
 import Foundation
@@ -20,7 +20,7 @@ final class DescriptionItemViewModel : ItemViewModelType {
         self.model = model
         self.string = model
     }
-    init(model:TVMaze.Show) {
+    init(model:Show) {
         self.model = model.summary
         self.string = model.summary
         
